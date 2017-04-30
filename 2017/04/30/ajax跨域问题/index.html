@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -90,17 +90,21 @@
 
 
 
-<meta name="description" content="书山有路，学海无涯">
-<meta name="keywords">
+<meta name="description" content="#跨域问题    这里先记录一点hexo的事情  就是写markdown的时候报了好多次错.这种错误是因为我在写标签的时候少加了个空格！！！.排查了半天，大家可以注意下  后面我会把解决问题的单独写一篇..上面这个是正确的下面这个是少了一个空格.  我们先回顾一下域名地址的组成：">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ajax跨域问题">
 <meta property="og:url" content="http://yoursite.com/2017/04/30/ajax跨域问题/index.html">
 <meta property="og:site_name" content="高山流水">
-<meta property="og:description" content="书山有路，学海无涯">
-<meta property="og:updated_time" content="2017-04-30T09:33:12.073Z">
+<meta property="og:description" content="#跨域问题    这里先记录一点hexo的事情  就是写markdown的时候报了好多次错.这种错误是因为我在写标签的时候少加了个空格！！！.排查了半天，大家可以注意下  后面我会把解决问题的单独写一篇..上面这个是正确的下面这个是少了一个空格.  我们先回顾一下域名地址的组成：">
+<meta property="og:image" content="http://i2.muimg.com/567571/e9c973b4eb8f0978.png">
+<meta property="og:image" content="http://i2.muimg.com/567571/64b77f053b7ea910.png">
+<meta property="og:image" content="http://i4.buimg.com/567571/54cf4daf20362b8b.png">
+<meta property="og:updated_time" content="2017-04-30T14:19:14.124Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ajax跨域问题">
-<meta name="twitter:description" content="书山有路，学海无涯">
+<meta name="twitter:description" content="#跨域问题    这里先记录一点hexo的事情  就是写markdown的时候报了好多次错.这种错误是因为我在写标签的时候少加了个空格！！！.排查了半天，大家可以注意下  后面我会把解决问题的单独写一篇..上面这个是正确的下面这个是少了一个空格.  我们先回顾一下域名地址的组成：">
+<meta name="twitter:image" content="http://i2.muimg.com/567571/e9c973b4eb8f0978.png">
 
 
 
@@ -334,7 +338,30 @@
       
 
       
-        
+        <p>#跨域问题  </p>
+<blockquote>
+<p>这里先记录一点hexo的事情  就是写markdown的时候报了好多次错<br>.<img src="http://i2.muimg.com/567571/e9c973b4eb8f0978.png" alt=""><br>这种错误是因为我在写标签的时候少加了个空格！！！<br>.排查了半天，大家可以注意下  后面我会把解决问题的单独写一篇<br>.<img src="http://i2.muimg.com/567571/64b77f053b7ea910.png" alt=""><br>.上面这个是正确的<br>下面这个是少了一个空格<br>.<img src="http://i4.buimg.com/567571/54cf4daf20362b8b.png" alt=""></p>
+</blockquote>
+<p>我们先回顾一下域名地址的组成：<br><a id="more"></a><br>http:// www . google : 8080 / script/jquery.js  </p>
+<pre><code>http:// （协议号）
+
+www  （子域名）
+
+google （主域名）
+
+8080 （端口号）
+</code></pre><ul>
+<li><p>当协议、子域名、主域名、端口号中任意一各不相同时，都算不同的“域”。</p>
+</li>
+<li><p>不同的域之间相互请求资源，就叫“跨域”。<br>（上面这段不是我写的）</p>
+</li>
+</ul>
+<p>浏览器有一个同源策略，就是说ajax只能请求域名完全一致的页面的资源<br>完全一致就是说，域名，协议，和端口号都要完全相同，否则是访问不了的。  </p>
+<p>###解决方式1<br>代理，通过后台服务器去请求资源，得到响应之后，再将数据返回给前端，这种属于后台技术，不过多阐述。</p>
+<p>###解决方式2<br>JSONP<br>我们知道script标签是可以引用其他地方的资源的（如在线引入jquery）<br>也就是说script标签是不受同源策略的影响的，我们将url写入script的src里面就会发送一个get请求。<br>但是这样还不够，因为script标签是会把请求得到的数据当作js代码来执行的，而我们大部分情况下请求的并不是可以执行的js代码。  </p>
+<p>不过，随着这种情况的发展，就发展出来了一种非正式的jsonp协议，就是说我们在请求的时候，最url最后写上回调函数的函数名，那么服务器返回的时候就会将返回的数据作为刚刚我们给服务器的函数的参数，这样一来，我们预先设定好回调函数就可以处理返回的数据了。  </p>
+<p>那么，下面我们开始实践，思路就是，先写好回调函数，然后利用js动态的在dom树里面添加一个script节点，将我们要请求的url加进去，就可以了，服务器响应返回数据之后，会执行我们预先设定好的回调函数。 下面上代码。  </p>
+
       
     </div>
 
@@ -360,6 +387,12 @@
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
       
 
       
