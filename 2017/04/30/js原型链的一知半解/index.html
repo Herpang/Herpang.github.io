@@ -90,17 +90,19 @@
 
 
 
-<meta name="description" content="#学习JS的一些记录和见解   &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;原型，我们每创建一个新函数都有为这个函数创建一个原型对象，而我们的新函数也会自动的有一个prototype属性，这个属性就指向这个函数的原型对象，函数的原型对象自己也有一个constructor属性，这个属性指向原函数（就是有prototype的属性的那个函数）。&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;如">
+<meta name="description" content="#学习JS的一些记录和见解   &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;原型，我们每创建一个新函数都有为这个函数创建一个原型对象，">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js原型链的一知半解">
 <meta property="og:url" content="http://yoursite.com/2017/04/30/js原型链的一知半解/index.html">
 <meta property="og:site_name" content="高山流水">
-<meta property="og:description" content="#学习JS的一些记录和见解   &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;原型，我们每创建一个新函数都有为这个函数创建一个原型对象，而我们的新函数也会自动的有一个prototype属性，这个属性就指向这个函数的原型对象，函数的原型对象自己也有一个constructor属性，这个属性指向原函数（就是有prototype的属性的那个函数）。&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;如">
-<meta property="og:updated_time" content="2017-04-30T06:21:49.941Z">
+<meta property="og:description" content="#学习JS的一些记录和见解   &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;原型，我们每创建一个新函数都有为这个函数创建一个原型对象，">
+<meta property="og:image" content="http://i1.piimg.com/567571/9e78f40a07e87e2d.png">
+<meta property="og:updated_time" content="2017-04-30T06:36:36.428Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js原型链的一知半解">
-<meta name="twitter:description" content="#学习JS的一些记录和见解   &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;原型，我们每创建一个新函数都有为这个函数创建一个原型对象，而我们的新函数也会自动的有一个prototype属性，这个属性就指向这个函数的原型对象，函数的原型对象自己也有一个constructor属性，这个属性指向原函数（就是有prototype的属性的那个函数）。&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;如">
+<meta name="twitter:description" content="#学习JS的一些记录和见解   &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;原型，我们每创建一个新函数都有为这个函数创建一个原型对象，">
+<meta name="twitter:image" content="http://i1.piimg.com/567571/9e78f40a07e87e2d.png">
 
 
 
@@ -335,7 +337,7 @@
 
       
         <p>#学习JS的一些记录和见解  </p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp;原型，我们每创建一个新函数都有为这个函数创建一个原型对象，<br>而我们的新函数也会自动的有一个prototype属性，这个属性就指向这个函数的原型对象，函数的原型对象自己也有一个constructor属性，这个属性指向原函数（就是有prototype的属性的那个函数）。<br>&ensp;&ensp;&ensp;&ensp;如果说我们刚刚创建的新函数是个构造函数，那么，用这个构造函数创建出来的每一个实例的prototype属性都会指向构造函数的原型对象.<br>代码示例：  </p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;原型，我们每创建一个新函数都有为这个函数创建一个原型对象，<br><a id="more"></a><br>而我们的新函数也会自动的有一个prototype属性，这个属性就指向这个函数的原型对象，函数的原型对象自己也有一个constructor属性，这个属性指向原函数（就是有prototype的属性的那个函数）。<br>&ensp;&ensp;&ensp;&ensp;如果说我们刚刚创建的新函数是个构造函数，那么，用这个构造函数创建出来的每一个实例的prototype属性都会指向构造函数的原型对象.<br>代码示例：  </p>
 <pre><code>Function Person(){
             Name:’test’,
             Age:23
@@ -351,80 +353,8 @@ delete person1.name
 hasOwnProperty()  用于检测属性是否在实例中，这个方法是object.prototype中的一个方法
  比如说， alert(person1.age) //23
 Person1.hasOwnProperty(“age”); //false
-这样就可以判断出，person1的age属性是从原型得到的
-</code></pre><p>&ensp;&ensp;&ensp;&ensp;当然，原型链肯定是和继承分不开的，下一篇就是继承的一些方法和实现。  </p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp;原型，我们每创建一个新函数都有为这个函数创建一个原型对象，<br>而我们的新函数也会自动的有一个prototype属性，这个属性就指向这个函数的原型对象，函数的原型对象自己也有一个constructor属性，这个属性指向原函数（就是有prototype的属性的那个函数）。<br>&ensp;&ensp;&ensp;&ensp;如果说我们刚刚创建的新函数是个构造函数，那么，用这个构造函数创建出来的每一个实例的prototype属性都会指向构造函数的原型对象.<br>代码示例：  </p>
-<pre><code>Function Person(){
-            Name:’test’,
-            Age:23
-            //指向此函数的原型对象
-            Prototype(此条属性每个函数都有) 
-}
-Var person1 = new person();
-Var person2 = new person();
-</code></pre><p>&ensp;&ensp;&ensp;&ensp;接下来说说原型链，还是刚刚这个图.<br>&ensp;&ensp;&ensp;&ensp;<br>当我们调用person1的name属性的时候，javascript引擎会现在person1本身找一下，看有没有这个属性，如果有，返回此属性，如果没有，就通过prototype属性去他的原型对象上找，如果有，返回，如果没有，再继续上面的步骤，从继续往上找，直到顶端，返回undefinde.<br>&ensp;&ensp;&ensp;&ensp;这个顺序也和重要，比如说Person.prototype上有name这个属性，而我们的实力person1想改变name的值，我们只需要在person1里面再写一遍name属性就可以了，因为我们访问属性的时候是现在自身找的，在自身找到之后会直接返回，就不会往上继续找了。<br>&ensp;&ensp;&ensp;&ensp;下面写一些可能会常用到的api   </p>
-<pre><code>delete删除属性  
-比如说我们想删除person1的name属性，
-delete person1.name  
-hasOwnProperty()  用于检测属性是否在实例中，这个方法是object.prototype中的一个方法
- 比如说， alert(person1.age) //23
-Person1.hasOwnProperty(“age”); //false
-这样就可以判断出，person1的age属性是从原型得到的
-</code></pre><p>&ensp;&ensp;&ensp;&ensp;当然，原型链肯定是和继承分不开的，下一篇就是继承的一些方法和实现。  </p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp;原型，我们每创建一个新函数都有为这个函数创建一个原型对象，<br>而我们的新函数也会自动的有一个prototype属性，这个属性就指向这个函数的原型对象，函数的原型对象自己也有一个constructor属性，这个属性指向原函数（就是有prototype的属性的那个函数）。<br>&ensp;&ensp;&ensp;&ensp;如果说我们刚刚创建的新函数是个构造函数，那么，用这个构造函数创建出来的每一个实例的prototype属性都会指向构造函数的原型对象.<br>代码示例：  </p>
-<pre><code>Function Person(){
-            Name:’test’,
-            Age:23
-            //指向此函数的原型对象
-            Prototype(此条属性每个函数都有) 
-}
-Var person1 = new person();
-Var person2 = new person();
-</code></pre><p>&ensp;&ensp;&ensp;&ensp;接下来说说原型链，还是刚刚这个图.<br>&ensp;&ensp;&ensp;&ensp;<br>当我们调用person1的name属性的时候，javascript引擎会现在person1本身找一下，看有没有这个属性，如果有，返回此属性，如果没有，就通过prototype属性去他的原型对象上找，如果有，返回，如果没有，再继续上面的步骤，从继续往上找，直到顶端，返回undefinde.<br>&ensp;&ensp;&ensp;&ensp;这个顺序也和重要，比如说Person.prototype上有name这个属性，而我们的实力person1想改变name的值，我们只需要在person1里面再写一遍name属性就可以了，因为我们访问属性的时候是现在自身找的，在自身找到之后会直接返回，就不会往上继续找了。<br>&ensp;&ensp;&ensp;&ensp;下面写一些可能会常用到的api   </p>
-<pre><code>delete删除属性  
-比如说我们想删除person1的name属性，
-delete person1.name  
-hasOwnProperty()  用于检测属性是否在实例中，这个方法是object.prototype中的一个方法
- 比如说， alert(person1.age) //23
-Person1.hasOwnProperty(“age”); //false
-这样就可以判断出，person1的age属性是从原型得到的
-</code></pre><p>&ensp;&ensp;&ensp;&ensp;当然，原型链肯定是和继承分不开的，下一篇就是继承的一些方法和实现。</p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp;原型，我们每创建一个新函数都有为这个函数创建一个原型对象，<br>而我们的新函数也会自动的有一个prototype属性，这个属性就指向这个函数的原型对象，函数的原型对象自己也有一个constructor属性，这个属性指向原函数（就是有prototype的属性的那个函数）。<br>&ensp;&ensp;&ensp;&ensp;如果说我们刚刚创建的新函数是个构造函数，那么，用这个构造函数创建出来的每一个实例的prototype属性都会指向构造函数的原型对象.<br>代码示例：  </p>
-<pre><code>Function Person(){
-            Name:’test’,
-            Age:23
-            //指向此函数的原型对象
-            Prototype(此条属性每个函数都有) 
-}
-Var person1 = new person();
-Var person2 = new person();
-</code></pre><p>&ensp;&ensp;&ensp;&ensp;接下来说说原型链，还是刚刚这个图.<br>&ensp;&ensp;&ensp;&ensp;<br>当我们调用person1的name属性的时候，javascript引擎会现在person1本身找一下，看有没有这个属性，如果有，返回此属性，如果没有，就通过prototype属性去他的原型对象上找，如果有，返回，如果没有，再继续上面的步骤，从继续往上找，直到顶端，返回undefinde.<br>&ensp;&ensp;&ensp;&ensp;这个顺序也和重要，比如说Person.prototype上有name这个属性，而我们的实力person1想改变name的值，我们只需要在person1里面再写一遍name属性就可以了，因为我们访问属性的时候是现在自身找的，在自身找到之后会直接返回，就不会往上继续找了。<br>&ensp;&ensp;&ensp;&ensp;下面写一些可能会常用到的api   </p>
-<pre><code>delete删除属性  
-比如说我们想删除person1的name属性，
-delete person1.name  
-hasOwnProperty()  用于检测属性是否在实例中，这个方法是object.prototype中的一个方法
- 比如说， alert(person1.age) //23
-Person1.hasOwnProperty(“age”); //false
-这样就可以判断出，person1的age属性是从原型得到的
-</code></pre><p>&ensp;&ensp;&ensp;&ensp;当然，原型链肯定是和继承分不开的，下一篇就是继承的一些方法和实现。  </p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp;原型，我们每创建一个新函数都有为这个函数创建一个原型对象，<br>而我们的新函数也会自动的有一个prototype属性，这个属性就指向这个函数的原型对象，函数的原型对象自己也有一个constructor属性，这个属性指向原函数（就是有prototype的属性的那个函数）。<br>&ensp;&ensp;&ensp;&ensp;如果说我们刚刚创建的新函数是个构造函数，那么，用这个构造函数创建出来的每一个实例的prototype属性都会指向构造函数的原型对象.<br>代码示例：  </p>
-<pre><code>Function Person(){
-            Name:’test’,
-            Age:23
-            //指向此函数的原型对象
-            Prototype(此条属性每个函数都有) 
-}
-Var person1 = new person();
-Var person2 = new person();
-</code></pre><p>&ensp;&ensp;&ensp;&ensp;接下来说说原型链，还是刚刚这个图.<br>&ensp;&ensp;&ensp;&ensp;<br>当我们调用person1的name属性的时候，javascript引擎会现在person1本身找一下，看有没有这个属性，如果有，返回此属性，如果没有，就通过prototype属性去他的原型对象上找，如果有，返回，如果没有，再继续上面的步骤，从继续往上找，直到顶端，返回undefinde.<br>&ensp;&ensp;&ensp;&ensp;这个顺序也和重要，比如说Person.prototype上有name这个属性，而我们的实力person1想改变name的值，我们只需要在person1里面再写一遍name属性就可以了，因为我们访问属性的时候是现在自身找的，在自身找到之后会直接返回，就不会往上继续找了。<br>&ensp;&ensp;&ensp;&ensp;下面写一些可能会常用到的api   </p>
-<pre><code>delete删除属性  
-比如说我们想删除person1的name属性，
-delete person1.name  
-hasOwnProperty()  用于检测属性是否在实例中，这个方法是object.prototype中的一个方法
- 比如说， alert(person1.age) //23
-Person1.hasOwnProperty(“age”); //false
-这样就可以判断出，person1的age属性是从原型得到的
-</code></pre><p>&ensp;&ensp;&ensp;&ensp;当然，原型链肯定是和继承分不开的，下一篇就是继承的一些方法和实现。</p>
+这样就可以判断出，person1的age属性是从原型得到的  
+</code></pre><p>下面是自己化的一个图<br><img src="http://i1.piimg.com/567571/9e78f40a07e87e2d.png" alt="原型链"><br>&ensp;&ensp;&ensp;&ensp;当然，原型链肯定是和继承分不开的，下一篇就是继承的一些方法和实现。  </p>
 
       
     </div>
@@ -466,10 +396,6 @@ Person1.hasOwnProperty(“age”); //false
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/04/30/test/" rel="next" title="test">
-                <i class="fa fa-chevron-left"></i> test
-              </a>
             
           </div>
 
@@ -542,7 +468,7 @@ Person1.hasOwnProperty(“age”); //false
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
