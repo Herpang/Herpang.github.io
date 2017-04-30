@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="#占坑 明天填">
+<meta name="description" content="#AJAX记录ajax以前也断断续续的学过很多次了，看了很多相关的博客，也简单封装过一次，这次系统的总结一下。">
 <meta name="keywords">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS继承的实现">
-<meta property="og:url" content="http://yoursite.com/2017/04/30/JS继承的实现/index.html">
+<meta property="og:title" content="ajax记录">
+<meta property="og:url" content="http://yoursite.com/2017/04/30/ajax记录/index.html">
 <meta property="og:site_name" content="高山流水">
-<meta property="og:description" content="#占坑 明天填">
-<meta property="og:updated_time" content="2017-04-30T07:58:41.914Z">
+<meta property="og:description" content="#AJAX记录ajax以前也断断续续的学过很多次了，看了很多相关的博客，也简单封装过一次，这次系统的总结一下。">
+<meta property="og:updated_time" content="2017-04-30T09:32:22.059Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS继承的实现">
-<meta name="twitter:description" content="#占坑 明天填">
+<meta name="twitter:title" content="ajax记录">
+<meta name="twitter:description" content="#AJAX记录ajax以前也断断续续的学过很多次了，看了很多相关的博客，也简单封装过一次，这次系统的总结一下。">
 
 
 
@@ -128,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/30/JS继承的实现/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/30/ajax记录/"/>
 
 
 
 
 
-  <title>JS继承的实现 | 高山流水</title>
+  <title>ajax记录 | 高山流水</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -263,7 +263,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/30/JS继承的实现/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/30/ajax记录/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="高山流水">
@@ -284,7 +284,7 @@
             
             
               
-                JS继承的实现
+                ajax记录
               
             
           </h1>
@@ -299,7 +299,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-30T15:57:33+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-30T16:17:18+08:00">
                 2017-04-30
               </time>
             
@@ -334,7 +334,35 @@
       
 
       
-        <p>#占坑 明天填</p>
+        <p>#AJAX记录<br>ajax以前也断断续续的学过很多次了，看了很多相关的博客，也简单封装过一次，这次系统的总结一下。<br>  <a id="more"></a><br>ajax是一种不需要刷新页面就可以和服务器进行数据交互的技术，在这可以回忆下form表单是怎么和服务器交互的。<br>这里又涉及到了js的单线程机制，就是说js的运行是单线程的，当我们提交form表单的时候，页面开始刷新，我们这时候就必须等待服务器响应完毕之后给用户返回成功与否，这时候用户做不了其他事情，很影响用户体验。<br>而ajax则可以异步的和服务器进行数据交换，就是说用户在提交数据的时候可以同时进行其他的操作，并不需要等待服务器响应完成。  </p>
+<blockquote>
+<p>一次偶然看到了一个这样的理解，可以将ajax技术想象成一个中间层，我们只要把请求交给中间层就可以了，剩下的就让中间层和服务器进行交互，这时候我们就可以做其他事情去了，交互完成之后中间层再返回给我们结果，我们再按照设置好的回调函数进行操作就可以了。  </p>
+</blockquote>
+<p>上面这种理解我觉得还挺贴切的。</p>
+<p>ajax的核心是XMLHttpRequest对象（就是我们刚才说的中间层），现在基本上所以浏览器都支持。<br>下面说一下具体的实现<br>我们必须的要用到的几个方法   </p>
+<ul>
+<li>open();方法 他会启动一个针对目标地址的请求，调用的时候不会真正的发送，只是准备好。这个方法 接收3个参数<br>第一个是请求类型 get post等<br>第二个是请求的URL<br>第三个是 是否异步发送 true false 默认是异步发送<br><code>open(&quot;get&quot;,&quot;example.php&quot;,true);</code> </li>
+<li>send(); 该方法接收1个参数，即我们要发送的数据。<br>执行这个方法才会真正的发送请求和数据<br>我们一般数据量比较小的时候会把参数放到url的后面，拼接字符串<br>一般发送post请求的时候才会给send方法里面放数据（注意，使用post请求的时候一定要在open方法和sned方法之间设置请求头 setRequestHeader(),这里我们后面说）</li>
+<li>responseText 属性，这个属性里面存放着服务器发回来的数据（只要格式不是XML，都会放在这里），也就是说数据交互成功之后我们从这个属性里面就可以得到返回的数据了。</li>
+<li>responseXML  当返回的数据格式是XML的时候，数据就会存在这里面（一般数据交互的时候用的都是json  ）</li>
+<li>status 响应的HTTP状态码 可以根据这个状态码来看是否出错，出错了该怎么调  </li>
+<li>statusText Http状态的说明<br>一般来说，在我们接到服务器响应的时候第一步就是要检查status属性， 200表示一切正常，并成功返回，这个时候我们就可以从responseText里面拿数据了，</li>
+<li>getResponseHeader()和  getALLResponseHeader()这两个方法是获取服务器响应的头部信息，说实话，这两个方法我还没用过，但是能看懂，第一个方法可以一个一个的查头部的字段，第二个是直接查询头部所有的字段，建议用第二个。  </li>
+</ul>
+<p>看到这里可能看烦了，咱下面边看代码边说。  </p>
+<p>###第一步，我们先创建xhr对象  </p>
+<pre><code>function creatXHR(){
+if(window.XMLHttpRequest){
+    return XMLHttpRequest();
+    }
+}else  {// IE6, IE5  
+  xmlhttp=new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);  
+} 
+</code></pre><p>其实就相当于    </p>
+<pre><code>var xhr = new XMLHttpRequest();
+</code></pre><p>现在兼容性一般都没什么问题。  </p>
+<p>###第二步，设置回调函数<br>    xhr.onreadystatechange = function () {<br>        if(xhr.readyState === 4 &amp;&amp; xhr.status === 200){ //这里其实应该判断的再准确点<br>            success(xhr.responseText);<br>        }else{<br>            error(xhr.readyState,xhr.status);<br>        }<br>    }<br>这里有一点上边没说，就是readyState属性，这个属性表示我们发送的请求的状态，取值0-4，4表示完成，这个值每次变化都会触发onreadystatechange，所以我们检查onreadystatechange就可以了,当readyState和status都没问题之后我们就可以执行毁掉函数了。  </p>
+<p>###第三步，open和send<br>    xhr.open(type,url,async);<br>    xhr.setRequestHeader(“Content-type”,”application/x-www-form-urlencoded”)<br>    xhr.send(data);<br>然后基本上就差不多了，<br>剩下的有时间慢慢补<br>我都觉得我说的有点啰嗦了， 下一篇写跨域问题。</p>
 
       
     </div>
@@ -371,8 +399,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/30/ajax记录/" rel="next" title="ajax记录">
-                <i class="fa fa-chevron-left"></i> ajax记录
+              <a href="/2017/04/30/ajax跨域问题/" rel="next" title="ajax跨域问题">
+                <i class="fa fa-chevron-left"></i> ajax跨域问题
               </a>
             
           </div>
@@ -381,8 +409,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/30/js原型链的一知半解/" rel="prev" title="JS原型链的一知半解">
-                JS原型链的一知半解 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/30/JS继承的实现/" rel="prev" title="JS继承的实现">
+                JS继承的实现 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
