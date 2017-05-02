@@ -90,19 +90,22 @@
 
 
 
-<meta name="description" content="#学习JS的一些记录和见解   &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;原型，我们每创建一个新函数都有为这个函数创建一个原型对象，">
+<meta name="description" content="#作用域和作用域链先说一下变量，变量包括基本类型和引用类型">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS原型链的一知半解">
-<meta property="og:url" content="http://yoursite.com/2017/04/30/js原型链的一知半解/index.html">
+<meta property="og:title" content="作用域和作用域链">
+<meta property="og:url" content="http://yoursite.com/2017/05/02/作用域和作用域链/index.html">
 <meta property="og:site_name" content="高山流水">
-<meta property="og:description" content="#学习JS的一些记录和见解   &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;原型，我们每创建一个新函数都有为这个函数创建一个原型对象，">
-<meta property="og:image" content="http://i1.piimg.com/567571/9e78f40a07e87e2d.png">
-<meta property="og:updated_time" content="2017-04-30T08:06:21.893Z">
+<meta property="og:description" content="#作用域和作用域链先说一下变量，变量包括基本类型和引用类型">
+<meta property="og:image" content="http://i1.piimg.com/567571/2ec213da6e34d041.png">
+<meta property="og:image" content="http://i2.muimg.com/567571/64e96c57861e8037.png">
+<meta property="og:image" content="http://i4.buimg.com/567571/2b3f83ed60647695.png">
+<meta property="og:image" content="http://i1.piimg.com/567571/00fac66988196898.png">
+<meta property="og:updated_time" content="2017-05-02T10:46:03.106Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS原型链的一知半解">
-<meta name="twitter:description" content="#学习JS的一些记录和见解   &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;原型，我们每创建一个新函数都有为这个函数创建一个原型对象，">
-<meta name="twitter:image" content="http://i1.piimg.com/567571/9e78f40a07e87e2d.png">
+<meta name="twitter:title" content="作用域和作用域链">
+<meta name="twitter:description" content="#作用域和作用域链先说一下变量，变量包括基本类型和引用类型">
+<meta name="twitter:image" content="http://i1.piimg.com/567571/2ec213da6e34d041.png">
 
 
 
@@ -130,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/30/js原型链的一知半解/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/02/作用域和作用域链/"/>
 
 
 
 
 
-  <title>JS原型链的一知半解 | 高山流水</title>
+  <title>作用域和作用域链 | 高山流水</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -265,7 +268,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/30/js原型链的一知半解/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/02/作用域和作用域链/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="高山流水">
@@ -286,7 +289,7 @@
             
             
               
-                JS原型链的一知半解
+                作用域和作用域链
               
             
           </h1>
@@ -301,8 +304,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-30T13:57:43+08:00">
-                2017-04-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-02T17:07:09+08:00">
+                2017-05-02
               </time>
             
 
@@ -336,25 +339,22 @@
       
 
       
-        <p>#学习JS的一些记录和见解  </p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp;原型，我们每创建一个新函数都有为这个函数创建一个原型对象，<br><a id="more"></a><br>而我们的新函数也会自动的有一个prototype属性，这个属性就指向这个函数的原型对象，函数的原型对象自己也有一个constructor属性，这个属性指向原函数（就是有prototype的属性的那个函数）。<br>&ensp;&ensp;&ensp;&ensp;如果说我们刚刚创建的新函数是个构造函数，那么，用这个构造函数创建出来的每一个实例的prototype属性都会指向构造函数的原型对象.<br>代码示例：  </p>
-<pre><code>Function Person(){
-            Name:’test’,
-            Age:23
-            //指向此函数的原型对象
-            Prototype(此条属性每个函数都有) 
-}
-Var person1 = new person();
-Var person2 = new person();
-</code></pre><p>&ensp;&ensp;&ensp;&ensp;接下来说说原型链，还是刚刚这个图.<br>&ensp;&ensp;&ensp;&ensp;<br>当我们调用person1的name属性的时候，javascript引擎会现在person1本身找一下，看有没有这个属性，如果有，返回此属性，如果没有，就通过prototype属性去他的原型对象上找，如果有，返回，如果没有，再继续上面的步骤，从继续往上找，直到顶端，返回undefinde.<br>&ensp;&ensp;&ensp;&ensp;这个顺序也和重要，比如说Person.prototype上有name这个属性，而我们的实力person1想改变name的值，我们只需要在person1里面再写一遍name属性就可以了，因为我们访问属性的时候是现在自身找的，在自身找到之后会直接返回，就不会往上继续找了。<br>&ensp;&ensp;&ensp;&ensp;下面写一些可能会常用到的api   </p>
-<pre><code>delete删除属性  
-比如说我们想删除person1的name属性，
-delete person1.name  
-hasOwnProperty()  用于检测属性是否在实例中，这个方法是object.prototype中的一个方法
- 比如说， alert(person1.age) //23
-Person1.hasOwnProperty(“age”); //false
-这样就可以判断出，person1的age属性是从原型得到的  
-</code></pre><p>下面是自己化的一个图<br><img src="http://i1.piimg.com/567571/9e78f40a07e87e2d.png" alt="原型链"><br>&ensp;&ensp;&ensp;&ensp;当然，原型链肯定是和继承分不开的，下一篇就是继承的一些方法和实现。  </p>
+        <p>#作用域和作用域链<br>先说一下变量，变量包括基本类型和引用类型<br><a id="more"></a><br>我们基本的五种数据类型，number string Boolean null undefined  ，这些都是基本类型，他们都是按值传递的，比如说，<br>Var text = 5;<br>Var test1 = tese;<br>这个时候test1就会从text那里复制一个5给自己，自己怎么玩儿都不会影响到text，这个就是按值传递。<br>引用类型指那些可能由多个值构成的对象，比如说object<br>引用类型是按照引用访问的，比如说    </p>
+<pre><code>Var t = new Object();
+Var t1 = t;
+</code></pre><p>这时候，tl得到的只是一个指向t在存储在堆内存中对象的一个指针，这时候我们操作t1的话，t也是会跟着改变的，足以证明，引用类型传递的是引用。    </p>
+<p>看代码  </p>
+<p><img src="http://i1.piimg.com/567571/2ec213da6e34d041.png" alt="">      </p>
+<p>再说一下传递参数，如果上面理解了，这里只需要记住一点就可以了，就是参数的传递永远都是按值传递的，不管是基本类型还是引用类型。<br>这里我觉得这样理解比较好，无论是值还是地址（指针），都是值.    </p>
+<p>###全局作用域和局部作用域，全局作用域，在全局任何一个地方都能访问到，而局部作用域一般只在特定的位置才能访问到，比如说函数的内部<br>全局作用域一般包涵下面三种情况，<br>1，    在最外层定义的变量和函数， //这个一般大家都理解<br>2，    没有声明，直接赋值的变量  //这个看下面的例子<br>仔细理解了一下，就是说js里面没有声明的变量都是全局变量，而且是顶层window对象。<br>3，    Window对象的内置属性  </p>
+<p>下面说一说执行环境和作用域链<br>执行环境（执行上下文）<br>1，在执行代码之前，会把要用到的所有变量都事先拿出来，有的会直接赋值，有的会用undefind占个位置。<br>2，函数在定义的时候就已经确定了内部变量的作用域。<br>3，函数每执行一次，都会产生一个新的执行上下文环境。<br>4，    执行上下文定义了变量或者函数有权访问的其他数据，比较抽象，我也没有进行深入的了解，但是有一些还是要知道的，执行环境实在一个栈里面，栈底是全局执行环境，栈顶是当前执行环境，当执行完当前的执行环境之后，出栈，然后将执行环境交给上一层。Window是最外层的执行环境。<br>5，    加强理解，首先会有一个全局上下文环境，当代码执行到函数的时候，再为该函数创建执行环境，这样就形成了一个执行上下文栈，正在执行的环境，就是活动对象，执行完，销毁，出栈，然后将执行环境交给栈里面的下一个，王福朋描述的过程非常好，在这里附上博客地址<a href="http://www.cnblogs.com/wangfupeng1988/p/3989357.html，" target="_blank" rel="external">http://www.cnblogs.com/wangfupeng1988/p/3989357.html，</a>  </p>
+<p>#作用域链  </p>
+<p>###当一个函数在执行环境中执行的时候，会创建一个作用域链，用来保证，将有权访问的对象进行有序的访问，<br>其实就是一个寻找我所需要的变量的过程，当前函数作用域内找不到的话就到创建这个函数的作用域内去找<br>当我们执行一个函数时，会先创建一个该函数的执行环境，下面看例子    </p>
+<p> <img src="http://i2.muimg.com/567571/64e96c57861e8037.png" alt="">  </p>
+<p>但我们执行函数test1的时候，创建函数test1的执行环境，并将该函数置于链表头部，然后是函数test调用的对象，再然后是全局对象window<br>作用域链是test1（）test()window<br>当我们调用test1（）；的时候，t这个对象会现在函数内部找，找到了，就返回，不会再往外面找了。<br>看到这里，其实很多以前不明白的地方就豁然开朗了，比如说函数内部的变量和全局变量同名的时候，调用该函数时，函数内部的局部变量会覆盖掉全局变量。<br>我们在看一个例子<br><img src="http://i4.buimg.com/567571/2b3f83ed60647695.png" alt="">    </p>
+<p>这里很容易犯错，当我们依次点击按钮1，2，3时会输出什么？<br>答案是 button4  button4  button4<br>为什么呢？  页面加载完之后，我们就会一次给三个按钮添加监听器，<br>当我们点击按钮的时候，会触发监听的点击事件，这时候调用预先设定好的回调函数<br>这个函数会输出 button+i 问题就出现在i上面，当我们执行完添加监听事件之后，这时候i就已经是4了，当执行回调函数的时候，function(){}本身没有i这个变量，根据作用域链，会往上层函数找，此时i为4，找到了，直接返回，所以点哪个按钮都会输出button4    </p>
+<p>最后一点，with语句，他主要是用该改变作用域链的顺序，看例子<br><img src="http://i1.piimg.com/567571/00fac66988196898.png" alt=""><br>其实就是说，with把t.te放到了作用域链的头部</p>
+<p>暂时先写这么多吧，后面深入了解的时候再慢慢更新。</p>
 
       
     </div>
@@ -397,18 +397,14 @@ Person1.hasOwnProperty(“age”); //false
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/30/JS继承的实现/" rel="next" title="JS继承的实现">
-                <i class="fa fa-chevron-left"></i> JS继承的实现
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/30/记录下心情/" rel="prev" title="记录下心情">
-                记录下心情 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/01/URL编码问题/" rel="prev" title="URL编码问题">
+                URL编码问题 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
