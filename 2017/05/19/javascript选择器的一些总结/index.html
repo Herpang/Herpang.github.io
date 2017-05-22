@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -90,17 +90,23 @@
 
 
 
-<meta name="description" content="前几天写项目的时候遇到了滑动的判断，然后简单的研究了下思想js是有原生的方法来判断按压，滑动，离开，这三个事件的，但是当我们需要判断滑动的时候就比较尴尬了，这个需要自己判断。">
-<meta name="keywords">
+<meta name="description" content="js选择器总结操作DOM树应该是我们做的最多的一些工作了，操作DOM树时，选择节点是必不可少的一项工作，下面我们就来说一说js里面常用的选择器（选择符）。">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="触摸和滑动的判断">
-<meta property="og:url" content="http://yoursite.com/2017/05/08/触摸和滑动的判断/index.html">
+<meta property="og:title" content="javascript选择器的一些总结">
+<meta property="og:url" content="http://yoursite.com/2017/05/19/javascript选择器的一些总结/index.html">
 <meta property="og:site_name" content="高山流水">
-<meta property="og:description" content="前几天写项目的时候遇到了滑动的判断，然后简单的研究了下思想js是有原生的方法来判断按压，滑动，离开，这三个事件的，但是当我们需要判断滑动的时候就比较尴尬了，这个需要自己判断。">
-<meta property="og:updated_time" content="2017-05-19T07:52:51.682Z">
+<meta property="og:description" content="js选择器总结操作DOM树应该是我们做的最多的一些工作了，操作DOM树时，选择节点是必不可少的一项工作，下面我们就来说一说js里面常用的选择器（选择符）。">
+<meta property="og:image" content="http://op7mej7ur.bkt.clouddn.com/17-5-19/11645370-file_1495177689994_1524b.png">
+<meta property="og:image" content="http://op7mej7ur.bkt.clouddn.com/17-5-19/57434205-file_1495177995390_16a19.png">
+<meta property="og:image" content="http://op7mej7ur.bkt.clouddn.com/17-5-19/38190121-file_1495179376152_10a5d.png">
+<meta property="og:image" content="http://op7mej7ur.bkt.clouddn.com/17-5-19/28484217-file_1495179355838_13732.png">
+<meta property="og:image" content="http://op7mej7ur.bkt.clouddn.com/17-5-19/37491381-file_1495179892069_e93b.png">
+<meta property="og:updated_time" content="2017-05-19T08:05:19.884Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="触摸和滑动的判断">
-<meta name="twitter:description" content="前几天写项目的时候遇到了滑动的判断，然后简单的研究了下思想js是有原生的方法来判断按压，滑动，离开，这三个事件的，但是当我们需要判断滑动的时候就比较尴尬了，这个需要自己判断。">
+<meta name="twitter:title" content="javascript选择器的一些总结">
+<meta name="twitter:description" content="js选择器总结操作DOM树应该是我们做的最多的一些工作了，操作DOM树时，选择节点是必不可少的一项工作，下面我们就来说一说js里面常用的选择器（选择符）。">
+<meta name="twitter:image" content="http://op7mej7ur.bkt.clouddn.com/17-5-19/11645370-file_1495177689994_1524b.png">
 
 
 
@@ -128,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/08/触摸和滑动的判断/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/19/javascript选择器的一些总结/"/>
 
 
 
 
 
-  <title>触摸和滑动的判断 | 高山流水</title>
+  <title>javascript选择器的一些总结 | 高山流水</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -263,7 +269,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/08/触摸和滑动的判断/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/19/javascript选择器的一些总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="高山流水">
@@ -284,7 +290,7 @@
             
             
               
-                触摸和滑动的判断
+                javascript选择器的一些总结
               
             
           </h1>
@@ -299,8 +305,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-08T16:45:44+08:00">
-                2017-05-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-19T14:22:10+08:00">
+                2017-05-19
               </time>
             
 
@@ -334,8 +340,11 @@
       
 
       
-        <h3 id="前几天写项目的时候遇到了滑动的判断，然后简单的研究了下思想"><a href="#前几天写项目的时候遇到了滑动的判断，然后简单的研究了下思想" class="headerlink" title="前几天写项目的时候遇到了滑动的判断，然后简单的研究了下思想"></a>前几天写项目的时候遇到了滑动的判断，然后简单的研究了下思想</h3><p>js是有原生的方法来判断按压，滑动，离开，这三个事件的，但是当我们需要判断滑动的时候就比较尴尬了，这个需要自己判断。<br><a id="more"></a><br>因为项目比较紧急，就网上找了一段判断的源码，简单的看了看，<br>大致的思想是，判断手指从接触屏幕到离开屏幕时候的移动的距离和角度，<br>我们预先设置好判断上下左右的几个范围，看一下触摸事件完成之后我们收集的数据落在哪个范围内，然后就进行相应的判断。<br>这段源码里面有几个方法不是特别熟悉，等过几天考完试在好好看看这段源码，源码放在了我github上面，有兴趣的可以去翻一翻。</p>
-
+        <h1 id="js选择器总结"><a href="#js选择器总结" class="headerlink" title="js选择器总结"></a>js选择器总结</h1><p>操作DOM树应该是我们做的最多的一些工作了，操作DOM树时，选择节点是必不可少的一项工作，下面我们就来说一说js里面常用的选择器（选择符）。 <a id="more"></a><br>一般常用的<br>1，document.getElementById();参数接收一个id，返回一个唯一的节点。<br>2，document.getElementsByTagName()；参数接收一个标签名（可能描述不准确），返回一组节点（nodelist节点），以数组形式访问。<br>3，document.getElementsByClassName();参数接受一个类名，返回一组节点（nodelist节点），以数组形式访问。<br>4，document.getElementsByName()；参数接收节点的name属性值，返回一组节点（nodelist节点），以数组形式访问。</p>
+<h3 id="上面是三个基本的选择器，选择器可以组合使用。"><a href="#上面是三个基本的选择器，选择器可以组合使用。" class="headerlink" title="上面是三个基本的选择器，选择器可以组合使用。"></a>上面是三个基本的选择器，选择器可以组合使用。</h3><p>比如说，先用getElementById()获取父节点，然后再用其他的选择器获得其子节点，看例子。<br><img src="http://op7mej7ur.bkt.clouddn.com/17-5-19/11645370-file_1495177689994_1524b.png" alt="例如"><br><img src="http://op7mej7ur.bkt.clouddn.com/17-5-19/57434205-file_1495177995390_16a19.png" alt="">    </p>
+<p>###一些扩展的，  </p>
+<h3 id="下面再说H5新增的"><a href="#下面再说H5新增的" class="headerlink" title="下面再说H5新增的"></a>下面再说H5新增的</h3><p>4，document.querySelector();参数接收一个css的选择符，返回和css选择符相匹配的第一个元素，注意，这个方法只返回一个元素。<br>比如上面的例子可以这样写<br><img src="http://op7mej7ur.bkt.clouddn.com/17-5-19/38190121-file_1495179376152_10a5d.png" alt=""><br><img src="http://op7mej7ur.bkt.clouddn.com/17-5-19/28484217-file_1495179355838_13732.png" alt=""><br>5,document.querySelector();参数接收一个css的选择符，返回和css选择符相匹配的的一组节点，注意，这个方法会返回所有符合标准的节点。<br><img src="http://op7mej7ur.bkt.clouddn.com/17-5-19/37491381-file_1495179892069_e93b.png" alt="">  </p>
+<h3 id="新出的这两个选择器还有很多的使用方式，我只是写了几个常用的，它其实很强大，还是原生的，性能好。"><a href="#新出的这两个选择器还有很多的使用方式，我只是写了几个常用的，它其实很强大，还是原生的，性能好。" class="headerlink" title="新出的这两个选择器还有很多的使用方式，我只是写了几个常用的，它其实很强大，还是原生的，性能好。"></a>新出的这两个选择器还有很多的使用方式，我只是写了几个常用的，它其实很强大，还是原生的，性能好。</h3>
       
     </div>
 
@@ -362,6 +371,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
+      
 
       
         
@@ -371,18 +386,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/19/javascript选择器的一些总结/" rel="next" title="javascript选择器的一些总结">
-                <i class="fa fa-chevron-left"></i> javascript选择器的一些总结
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/06/遇到的一个错误/" rel="prev" title="遇到的一个错误">
-                遇到的一个错误 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/08/触摸和滑动的判断/" rel="prev" title="触摸和滑动的判断">
+                触摸和滑动的判断 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -503,7 +514,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前几天写项目的时候遇到了滑动的判断，然后简单的研究了下思想"><span class="nav-number">1.</span> <span class="nav-text">前几天写项目的时候遇到了滑动的判断，然后简单的研究了下思想</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#js选择器总结"><span class="nav-number">1.</span> <span class="nav-text">js选择器总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#上面是三个基本的选择器，选择器可以组合使用。"><span class="nav-number">1.0.1.</span> <span class="nav-text">上面是三个基本的选择器，选择器可以组合使用。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下面再说H5新增的"><span class="nav-number">1.0.2.</span> <span class="nav-text">下面再说H5新增的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新出的这两个选择器还有很多的使用方式，我只是写了几个常用的，它其实很强大，还是原生的，性能好。"><span class="nav-number">1.0.3.</span> <span class="nav-text">新出的这两个选择器还有很多的使用方式，我只是写了几个常用的，它其实很强大，还是原生的，性能好。</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

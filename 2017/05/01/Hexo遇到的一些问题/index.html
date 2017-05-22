@@ -90,20 +90,20 @@
 
 
 
-<meta name="description" content="问题1  这里先记录一点hexo的事情  就是写markdown的时候报了好多次错">
+<meta name="description" content="问题1 这里先记录一点hexo的事情  就是写markdown的时候报了好多次错">
 <meta name="keywords" content="j">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo遇到的一些问题">
 <meta property="og:url" content="http://yoursite.com/2017/05/01/Hexo遇到的一些问题/index.html">
 <meta property="og:site_name" content="高山流水">
-<meta property="og:description" content="问题1  这里先记录一点hexo的事情  就是写markdown的时候报了好多次错">
+<meta property="og:description" content="问题1 这里先记录一点hexo的事情  就是写markdown的时候报了好多次错">
 <meta property="og:image" content="http://i2.muimg.com/567571/e9c973b4eb8f0978.png">
 <meta property="og:image" content="http://i2.muimg.com/567571/64b77f053b7ea910.png">
 <meta property="og:image" content="http://i4.buimg.com/567571/54cf4daf20362b8b.png">
-<meta property="og:updated_time" content="2017-05-01T12:22:39.546Z">
+<meta property="og:updated_time" content="2017-05-19T07:52:02.691Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo遇到的一些问题">
-<meta name="twitter:description" content="问题1  这里先记录一点hexo的事情  就是写markdown的时候报了好多次错">
+<meta name="twitter:description" content="问题1 这里先记录一点hexo的事情  就是写markdown的时候报了好多次错">
 <meta name="twitter:image" content="http://i2.muimg.com/567571/e9c973b4eb8f0978.png">
 
 
@@ -338,10 +338,10 @@
       
 
       
-        <p>问题1</p>
-<blockquote>
-<p>这里先记录一点hexo的事情  就是写markdown的时候报了好多次错<br><a id="more"></a><br>.<img src="http://i2.muimg.com/567571/e9c973b4eb8f0978.png" alt=""><br>这种错误是因为我在写标签的时候少加了个空格！！！<br>.排查了半天，大家可以注意下  后面我会把解决问题的单独写一篇<br>.<img src="http://i2.muimg.com/567571/64b77f053b7ea910.png" alt=""><br>.上面这个是正确的<br>下面这个是少了一个空格<br>.<img src="http://i4.buimg.com/567571/54cf4daf20362b8b.png" alt=""><br>问题2<br>写博客的时候发现markdowm语法支持的不是特别好，不知道是我编辑器的原因还是其他的，一会去找找原因。  </p>
-</blockquote>
+        <h3 id="问题1"><a href="#问题1" class="headerlink" title="问题1"></a>问题1</h3><blockquote>
+<p>这里先记录一点hexo的事情  就是写markdown的时候报了好多次错<br><a id="more"></a><br>.<img src="http://i2.muimg.com/567571/e9c973b4eb8f0978.png" alt=""><br>这种错误是因为我在写标签的时候少加了个空格！！！<br>.排查了半天，大家可以注意下  后面我会把解决问题的单独写一篇<br>.<img src="http://i2.muimg.com/567571/64b77f053b7ea910.png" alt=""><br>.上面这个是正确的<br>下面这个是少了一个空格<br>.<img src="http://i4.buimg.com/567571/54cf4daf20362b8b.png" alt="">  </p>
+<h3 id="问题2"><a href="#问题2" class="headerlink" title="问题2"></a>问题2</h3><p>写博客的时候发现markdowm语法支持的不是特别好，不知道是我编辑器的原因还是其他的，一会去找找原因。    </p>
+<h4 id="这个问题解决了，原因是Hexo在转换markdown语法的时候’-’后面要加一个空格，否则有一些时候是会转化不成功的。"><a href="#这个问题解决了，原因是Hexo在转换markdown语法的时候’-’后面要加一个空格，否则有一些时候是会转化不成功的。" class="headerlink" title="这个问题解决了，原因是Hexo在转换markdown语法的时候’#’后面要加一个空格，否则有一些时候是会转化不成功的。"></a>这个问题解决了，原因是Hexo在转换markdown语法的时候’#’后面要加一个空格，否则有一些时候是会转化不成功的。</h4></blockquote>
 
       
     </div>
@@ -443,8 +443,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/head_1.jpg"
@@ -459,7 +468,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -497,6 +506,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题1"><span class="nav-number">1.</span> <span class="nav-text">问题1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题2"><span class="nav-number">2.</span> <span class="nav-text">问题2</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#这个问题解决了，原因是Hexo在转换markdown语法的时候’-’后面要加一个空格，否则有一些时候是会转化不成功的。"><span class="nav-number">2.1.</span> <span class="nav-text">这个问题解决了，原因是Hexo在转换markdown语法的时候’#’后面要加一个空格，否则有一些时候是会转化不成功的。</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
