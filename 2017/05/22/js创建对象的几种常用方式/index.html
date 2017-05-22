@@ -90,17 +90,24 @@
 
 
 
-<meta name="description" content="关于编码的一些问题本来想着这几天把博客移过来的，无奈要期末考试了，时间太少，想做的事情太多，博客就慢慢移，前两篇都是ajax，那就再写一个ajax的把这部分完结掉。ajax前两篇博客简单总结了下，就想着完善下前一段时间自己封装的ajax插件，封转的时候参考了参考其他人写的，不可避免的一个步骤就是对URl的编码，又抓紧时间看书翻博客，看大神们是怎么解决这个问题的（PS：阮一峰大神的博客写的就是好！）">
+<meta name="description" content="1.工厂模式">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="URL编码问题">
-<meta property="og:url" content="http://yoursite.com/2017/05/01/URL编码问题/index.html">
+<meta property="og:title" content="js创建对象的几种常用方式">
+<meta property="og:url" content="http://yoursite.com/2017/05/22/js创建对象的几种常用方式/index.html">
 <meta property="og:site_name" content="高山流水">
-<meta property="og:description" content="关于编码的一些问题本来想着这几天把博客移过来的，无奈要期末考试了，时间太少，想做的事情太多，博客就慢慢移，前两篇都是ajax，那就再写一个ajax的把这部分完结掉。ajax前两篇博客简单总结了下，就想着完善下前一段时间自己封装的ajax插件，封转的时候参考了参考其他人写的，不可避免的一个步骤就是对URl的编码，又抓紧时间看书翻博客，看大神们是怎么解决这个问题的（PS：阮一峰大神的博客写的就是好！）">
-<meta property="og:updated_time" content="2017-05-19T07:49:09.863Z">
+<meta property="og:description" content="1.工厂模式">
+<meta property="og:image" content="http://op7mej7ur.bkt.clouddn.com/17-5-22/29251988-file_1495429188127_bda3.png">
+<meta property="og:image" content="http://op7mej7ur.bkt.clouddn.com/17-5-22/4226376-file_1495431037997_f527.png">
+<meta property="og:image" content="http://op7mej7ur.bkt.clouddn.com/17-5-22/22759517-file_1495433451141_16e84.png">
+<meta property="og:image" content="http://op7mej7ur.bkt.clouddn.com/17-5-22/14305100-file_1495434018898_15f81.png">
+<meta property="og:image" content="http://op7mej7ur.bkt.clouddn.com/17-5-22/64888725-file_1495436002479_5601.png">
+<meta property="og:image" content="http://op7mej7ur.bkt.clouddn.com/17-5-22/97511997-file_1495438372924_14e23.png">
+<meta property="og:updated_time" content="2017-05-22T07:34:53.336Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="URL编码问题">
-<meta name="twitter:description" content="关于编码的一些问题本来想着这几天把博客移过来的，无奈要期末考试了，时间太少，想做的事情太多，博客就慢慢移，前两篇都是ajax，那就再写一个ajax的把这部分完结掉。ajax前两篇博客简单总结了下，就想着完善下前一段时间自己封装的ajax插件，封转的时候参考了参考其他人写的，不可避免的一个步骤就是对URl的编码，又抓紧时间看书翻博客，看大神们是怎么解决这个问题的（PS：阮一峰大神的博客写的就是好！）">
+<meta name="twitter:title" content="js创建对象的几种常用方式">
+<meta name="twitter:description" content="1.工厂模式">
+<meta name="twitter:image" content="http://op7mej7ur.bkt.clouddn.com/17-5-22/29251988-file_1495429188127_bda3.png">
 
 
 
@@ -128,13 +135,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/01/URL编码问题/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/22/js创建对象的几种常用方式/"/>
 
 
 
 
 
-  <title>URL编码问题 | 高山流水</title>
+  <title>js创建对象的几种常用方式 | 高山流水</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -263,7 +270,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/01/URL编码问题/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/22/js创建对象的几种常用方式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="高山流水">
@@ -284,7 +291,7 @@
             
             
               
-                URL编码问题
+                js创建对象的几种常用方式
               
             
           </h1>
@@ -299,8 +306,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-01T19:55:58+08:00">
-                2017-05-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-22T12:45:42+08:00">
+                2017-05-22
               </time>
             
 
@@ -334,8 +341,17 @@
       
 
       
-        <h1 id="关于编码的一些问题"><a href="#关于编码的一些问题" class="headerlink" title="关于编码的一些问题"></a>关于编码的一些问题</h1><p>本来想着这几天把博客移过来的，无奈要期末考试了，时间太少，想做的事情太多，博客就慢慢移，前两篇都是ajax，那就再写一个ajax的把这部分完结掉。<br>ajax前两篇博客简单总结了下，就想着完善下前一段时间自己封装的ajax插件，封转的时候参考了参考其他人写的，不可避免的一个步骤就是对URl的编码，又抓紧时间看书翻博客，看大神们是怎么解决这个问题的（PS：阮一峰大神的博客写的就是好！）  </p>
-<h4 id="步入正题"><a href="#步入正题" class="headerlink" title="步入正题"></a>步入正题</h4><p>占坑 </p>
+        <h3 id="1-工厂模式"><a href="#1-工厂模式" class="headerlink" title="1.工厂模式"></a>1.工厂模式</h3><a id="more"></a>
+<p>很基础的一种方法，解决了创建多个相似对象的问题，主要是抽象了创建对象的过程，将对象的属性作为参数传入。<br><img src="http://op7mej7ur.bkt.clouddn.com/17-5-22/29251988-file_1495429188127_bda3.png" alt="">  </p>
+<h3 id="2-构造函数模式"><a href="#2-构造函数模式" class="headerlink" title="2.构造函数模式"></a>2.构造函数模式</h3><p>和工厂模式相比，构造函数的模式并没有显式的创建对象，构造函数直接将属性和方法赋给了this对象，也没用return对象。  注意，构造函数名我们默认首字母大写  </p>
+<p><img src="http://op7mej7ur.bkt.clouddn.com/17-5-22/4226376-file_1495431037997_f527.png" alt=""><br>构造函数的过程  </p>
+<p>1，会首先创建一个对象<br>2，将构造函数的作用域赋给新的对象（这样this就指向了这个新对象）<br>3，执行构造函数里面的代码<br>4，返回新对象      </p>
+<h4 id="我们创建自定义的构造函数时，意味着可以把他的实例标识为一种特定的类型，用instanceof可以检测出来"><a href="#我们创建自定义的构造函数时，意味着可以把他的实例标识为一种特定的类型，用instanceof可以检测出来" class="headerlink" title="我们创建自定义的构造函数时，意味着可以把他的实例标识为一种特定的类型，用instanceof可以检测出来"></a>我们创建自定义的构造函数时，意味着可以把他的实例标识为一种特定的类型，用instanceof可以检测出来</h4><h4 id="构造函数和普通函数的区别，唯一的区别就是调用的方式不同，"><a href="#构造函数和普通函数的区别，唯一的区别就是调用的方式不同，" class="headerlink" title="构造函数和普通函数的区别，唯一的区别就是调用的方式不同，"></a>构造函数和普通函数的区别，唯一的区别就是调用的方式不同，</h4><p>实际上，任何函数用new操作符调用，都是构造函数，而构造函数不用new操作符调用，和普通的函数没什么两样。  </p>
+<h4 id="构造函数存在的一些问题"><a href="#构造函数存在的一些问题" class="headerlink" title="构造函数存在的一些问题"></a>构造函数存在的一些问题</h4><p>主要是构造函数创建的方法，由构造函数创建的方法是在每个实例都实现一遍的，也就是说不同的实例之间互不影响，不能共享，在我们不需要多个实例共享方法的时候不是问题。</p>
+<h3 id="3-原型模式"><a href="#3-原型模式" class="headerlink" title="3.原型模式"></a>3.原型模式</h3><p>说到原型模式肯定离不开原型继承和原型链(我有单独写一篇，可以去看一下)<br>原型模式主要利用了prototype这个属性，我们每创建一个函数，都会为该函数创建一个原型，函数本身都会有一个prototype属性，指向该原型，原型本身也会有一个constructor属性，指向原函数。<br><img src="http://op7mej7ur.bkt.clouddn.com/17-5-22/22759517-file_1495433451141_16e84.png" alt=""><br> 这样，根据原型链的方向，每个Person函数的实例都能从Person函数的原型上读到所有的属性和方法，并且这些方法是共享的。  </p>
+<h3 id="4-组合使用构造函数和原型模式"><a href="#4-组合使用构造函数和原型模式" class="headerlink" title="4.组合使用构造函数和原型模式"></a>4.组合使用构造函数和原型模式</h3><p>这种方式是我们很常用的一种方式，在构造函数里面定义实例的属性，在原型模式里面定义方法和共有的属性。这样就可以共享着方法的使用，每个实例也会有一个属于自己的属性的副本，还可以向构造函数传参，最大限度的节省了内存。<br><img src="http://op7mej7ur.bkt.clouddn.com/17-5-22/14305100-file_1495434018898_15f81.png" alt="">  </p>
+<h3 id="5-寄生构造函数模式"><a href="#5-寄生构造函数模式" class="headerlink" title="5.寄生构造函数模式"></a>5.寄生构造函数模式</h3><p>寄生构造函数模式几乎和工厂模式一模一样，唯一的一点区别是，寄生构造函数调用的时候是用new操作符调用的，而工厂模式是直接调用的。仅此而已。<br>寄生构造函数的模式在一些特定的情况下还是很好用的，比如说，我们想给一个数组添加一个自定义的方法，由于我们不能直接修改数组的构造函数，这时候寄生构造函数就可以派上用场了，具体的看代码！<br><img src="http://op7mej7ur.bkt.clouddn.com/17-5-22/64888725-file_1495436002479_5601.png" alt="">  </p>
+<h3 id="6-稳妥构造函数模式"><a href="#6-稳妥构造函数模式" class="headerlink" title="6.稳妥构造函数模式"></a>6.稳妥构造函数模式</h3><p>稳妥构造函数，就像他的名字，很稳妥，在什么模式下面都可以用，比如说禁止使用this和new的时候，这种模式很适合在一些安全环境中使用（具体的使用场景我还没经历过，没能深刻领悟）<br>下面看看代码吧<br><img src="http://op7mej7ur.bkt.clouddn.com/17-5-22/97511997-file_1495438372924_14e23.png" alt=""></p>
 
       
     </div>
@@ -378,18 +394,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/02/作用域和作用域链/" rel="next" title="作用域和作用域链">
-                <i class="fa fa-chevron-left"></i> 作用域和作用域链
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/01/Hexo遇到的一些问题/" rel="prev" title="Hexo遇到的一些问题">
-                Hexo遇到的一些问题 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/19/javascript选择器的一些总结/" rel="prev" title="javascript选择器的一些总结">
+                javascript选择器的一些总结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -510,7 +522,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#关于编码的一些问题"><span class="nav-number">1.</span> <span class="nav-text">关于编码的一些问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#步入正题"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">步入正题</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-工厂模式"><span class="nav-number">1.</span> <span class="nav-text">1.工厂模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-构造函数模式"><span class="nav-number">2.</span> <span class="nav-text">2.构造函数模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#我们创建自定义的构造函数时，意味着可以把他的实例标识为一种特定的类型，用instanceof可以检测出来"><span class="nav-number">2.1.</span> <span class="nav-text">我们创建自定义的构造函数时，意味着可以把他的实例标识为一种特定的类型，用instanceof可以检测出来</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构造函数和普通函数的区别，唯一的区别就是调用的方式不同，"><span class="nav-number">2.2.</span> <span class="nav-text">构造函数和普通函数的区别，唯一的区别就是调用的方式不同，</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构造函数存在的一些问题"><span class="nav-number">2.3.</span> <span class="nav-text">构造函数存在的一些问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-原型模式"><span class="nav-number">3.</span> <span class="nav-text">3.原型模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-组合使用构造函数和原型模式"><span class="nav-number">4.</span> <span class="nav-text">4.组合使用构造函数和原型模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-寄生构造函数模式"><span class="nav-number">5.</span> <span class="nav-text">5.寄生构造函数模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-稳妥构造函数模式"><span class="nav-number">6.</span> <span class="nav-text">6.稳妥构造函数模式</span></a></li></ol></div>
             
 
           </div>
