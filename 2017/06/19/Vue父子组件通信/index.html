@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Vue," />
 
 
 
@@ -90,17 +90,23 @@
 
 
 
-<meta name="description" content="占坑 明天填">
-<meta name="keywords">
+<meta name="description" content="Vue父子组件之间通信好久没有写博客了，因为前段时间刚找到实习，刚入职就一直有任务需要做，所以耽误了很长一段时间，今天刚结了一点，想着写一写。最近的一个项目用上了Vue，Vuex,Vue-router,webpack等一系列的东西Vue核心是数据驱动，组件化什么的，最近写了组件，不可避免的就是组件间通信，这次先写父子组件之间的通信，后面再写Vuex父组件传递到子组件信息很简单，用prop属性就可以">
+<meta name="keywords" content="Vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS继承的实现">
-<meta property="og:url" content="http://yoursite.com/2017/04/30/JS继承的实现/index.html">
+<meta property="og:title" content="Vue父子组件通信">
+<meta property="og:url" content="http://yoursite.com/2017/06/19/Vue父子组件通信/index.html">
 <meta property="og:site_name" content="高山流水">
-<meta property="og:description" content="占坑 明天填">
-<meta property="og:updated_time" content="2017-05-19T07:49:11.537Z">
+<meta property="og:description" content="Vue父子组件之间通信好久没有写博客了，因为前段时间刚找到实习，刚入职就一直有任务需要做，所以耽误了很长一段时间，今天刚结了一点，想着写一写。最近的一个项目用上了Vue，Vuex,Vue-router,webpack等一系列的东西Vue核心是数据驱动，组件化什么的，最近写了组件，不可避免的就是组件间通信，这次先写父子组件之间的通信，后面再写Vuex父组件传递到子组件信息很简单，用prop属性就可以">
+<meta property="og:image" content="http://op7mej7ur.bkt.clouddn.com/17-6-19/55626243.jpg">
+<meta property="og:image" content="http://op7mej7ur.bkt.clouddn.com/17-6-19/1029652.jpg">
+<meta property="og:image" content="http://op7mej7ur.bkt.clouddn.com/17-6-19/34322473.jpg">
+<meta property="og:image" content="http://op7mej7ur.bkt.clouddn.com/17-6-19/76659661.jpg">
+<meta property="og:image" content="http://op7mej7ur.bkt.clouddn.com/17-6-19/10616810.jpg">
+<meta property="og:updated_time" content="2017-06-19T09:28:22.875Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS继承的实现">
-<meta name="twitter:description" content="占坑 明天填">
+<meta name="twitter:title" content="Vue父子组件通信">
+<meta name="twitter:description" content="Vue父子组件之间通信好久没有写博客了，因为前段时间刚找到实习，刚入职就一直有任务需要做，所以耽误了很长一段时间，今天刚结了一点，想着写一写。最近的一个项目用上了Vue，Vuex,Vue-router,webpack等一系列的东西Vue核心是数据驱动，组件化什么的，最近写了组件，不可避免的就是组件间通信，这次先写父子组件之间的通信，后面再写Vuex父组件传递到子组件信息很简单，用prop属性就可以">
+<meta name="twitter:image" content="http://op7mej7ur.bkt.clouddn.com/17-6-19/55626243.jpg">
 
 
 
@@ -128,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/30/JS继承的实现/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/06/19/Vue父子组件通信/"/>
 
 
 
 
 
-  <title>JS继承的实现 | 高山流水</title>
+  <title>Vue父子组件通信 | 高山流水</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -263,7 +269,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/30/JS继承的实现/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/19/Vue父子组件通信/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="高山流水">
@@ -284,7 +290,7 @@
             
             
               
-                JS继承的实现
+                Vue父子组件通信
               
             
           </h1>
@@ -299,8 +305,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-30T15:57:33+08:00">
-                2017-04-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-19T16:44:05+08:00">
+                2017-06-19
               </time>
             
 
@@ -334,7 +340,9 @@
       
 
       
-        <h1 id="占坑-明天填"><a href="#占坑-明天填" class="headerlink" title="占坑 明天填"></a>占坑 明天填</h1>
+        <h1 id="Vue父子组件之间通信"><a href="#Vue父子组件之间通信" class="headerlink" title="Vue父子组件之间通信"></a>Vue父子组件之间通信</h1><h5 id="好久没有写博客了，因为前段时间刚找到实习，刚入职就一直有任务需要做，所以耽误了很长一段时间，今天刚结了一点，想着写一写。"><a href="#好久没有写博客了，因为前段时间刚找到实习，刚入职就一直有任务需要做，所以耽误了很长一段时间，今天刚结了一点，想着写一写。" class="headerlink" title="好久没有写博客了，因为前段时间刚找到实习，刚入职就一直有任务需要做，所以耽误了很长一段时间，今天刚结了一点，想着写一写。"></a>好久没有写博客了，因为前段时间刚找到实习，刚入职就一直有任务需要做，所以耽误了很长一段时间，今天刚结了一点，想着写一写。</h5><h5 id="最近的一个项目用上了Vue，Vuex-Vue-router-webpack等一系列的东西"><a href="#最近的一个项目用上了Vue，Vuex-Vue-router-webpack等一系列的东西" class="headerlink" title="最近的一个项目用上了Vue，Vuex,Vue-router,webpack等一系列的东西"></a>最近的一个项目用上了Vue，Vuex,Vue-router,webpack等一系列的东西</h5><h5 id="Vue核心是数据驱动，组件化什么的，最近写了组件，不可避免的就是组件间通信，这次先写父子组件之间的通信，后面再写Vuex"><a href="#Vue核心是数据驱动，组件化什么的，最近写了组件，不可避免的就是组件间通信，这次先写父子组件之间的通信，后面再写Vuex" class="headerlink" title="Vue核心是数据驱动，组件化什么的，最近写了组件，不可避免的就是组件间通信，这次先写父子组件之间的通信，后面再写Vuex"></a>Vue核心是数据驱动，组件化什么的，最近写了组件，不可避免的就是组件间通信，这次先写父子组件之间的通信，后面再写Vuex</h5><h5 id="父组件传递到子组件信息很简单，用prop属性就可以了，"><a href="#父组件传递到子组件信息很简单，用prop属性就可以了，" class="headerlink" title="父组件传递到子组件信息很简单，用prop属性就可以了，"></a>父组件传递到子组件信息很简单，用prop属性就可以了，</h5><p>直接上代码<br>步骤和需要注意的几个点<br>1，创建模版，注册组件，挂载实例等一些基础的就不说了<br>2，用v-model进行双向绑定<br>3，这里的关键是用v-bind命令进行子组件和父组件属性的映射<br>（如果属性用驼峰命名法的话，在模版里面要用短线隔开，比如说  props[‘className’],在模版里面要这样写 class-name）<br>v-bind:myname = ‘name’  冒号后面紧跟的是子组件里面的属性，后面是的父组件里面的属性，这样就形成了一个父子组件属性之间的映射，但这种映射关系子组件只能读取属性，不能通过这种方式修改父组件的属性。<br><img src="http://op7mej7ur.bkt.clouddn.com/17-6-19/55626243.jpg" alt=""><br><img src="http://op7mej7ur.bkt.clouddn.com/17-6-19/1029652.jpg" alt=""><br><img src="http://op7mej7ur.bkt.clouddn.com/17-6-19/34322473.jpg" alt="">  </p>
+<h5 id="子组件给父组件传递信息"><a href="#子组件给父组件传递信息" class="headerlink" title="子组件给父组件传递信息"></a>子组件给父组件传递信息</h5><p>上面的代码只增加了一点，<br>大致思路是子组件通过一个方法触发父组件里面我们实现设定好的方法<br><img src="http://op7mej7ur.bkt.clouddn.com/17-6-19/76659661.jpg" alt=""><br><img src="http://op7mej7ur.bkt.clouddn.com/17-6-19/10616810.jpg" alt=""></p>
+
       
     </div>
 
@@ -361,6 +369,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Vue/" rel="tag"># Vue</a>
+          
+        </div>
+      
 
       
         
@@ -370,18 +384,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/30/ajax记录/" rel="next" title="ajax记录">
-                <i class="fa fa-chevron-left"></i> ajax记录
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/30/js原型链的一知半解/" rel="prev" title="JS原型链的一知半解">
-                JS原型链的一知半解 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/26/svn使用的一些总结/" rel="prev" title="svn使用的一些总结">
+                svn使用的一些总结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -502,7 +512,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#占坑-明天填"><span class="nav-number">1.</span> <span class="nav-text">占坑 明天填</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Vue父子组件之间通信"><span class="nav-number">1.</span> <span class="nav-text">Vue父子组件之间通信</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#好久没有写博客了，因为前段时间刚找到实习，刚入职就一直有任务需要做，所以耽误了很长一段时间，今天刚结了一点，想着写一写。"><span class="nav-number">1.0.0.0.1.</span> <span class="nav-text">好久没有写博客了，因为前段时间刚找到实习，刚入职就一直有任务需要做，所以耽误了很长一段时间，今天刚结了一点，想着写一写。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#最近的一个项目用上了Vue，Vuex-Vue-router-webpack等一系列的东西"><span class="nav-number">1.0.0.0.2.</span> <span class="nav-text">最近的一个项目用上了Vue，Vuex,Vue-router,webpack等一系列的东西</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Vue核心是数据驱动，组件化什么的，最近写了组件，不可避免的就是组件间通信，这次先写父子组件之间的通信，后面再写Vuex"><span class="nav-number">1.0.0.0.3.</span> <span class="nav-text">Vue核心是数据驱动，组件化什么的，最近写了组件，不可避免的就是组件间通信，这次先写父子组件之间的通信，后面再写Vuex</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#父组件传递到子组件信息很简单，用prop属性就可以了，"><span class="nav-number">1.0.0.0.4.</span> <span class="nav-text">父组件传递到子组件信息很简单，用prop属性就可以了，</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#子组件给父组件传递信息"><span class="nav-number">1.0.0.0.5.</span> <span class="nav-text">子组件给父组件传递信息</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
