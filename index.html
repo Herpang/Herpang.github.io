@@ -263,6 +263,127 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/20/Vue组件间通信/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="高山流水">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head_1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="高山流水">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/06/20/Vue组件间通信/" itemprop="url">
+                  Vue组件间通信
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-20T11:20:23+08:00">
+                2017-06-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="上篇写了父子组件之间的通信，这次写组件之间的通信，其实很简单，和子传父大同小异"><a href="#上篇写了父子组件之间的通信，这次写组件之间的通信，其实很简单，和子传父大同小异" class="headerlink" title="上篇写了父子组件之间的通信，这次写组件之间的通信，其实很简单，和子传父大同小异"></a>上篇写了父子组件之间的通信，这次写组件之间的通信，其实很简单，和子传父大同小异</h5><p>先写文字，后面再上图片<br>1，我们要先创建一个中央事件总线，也就是eventBus.js<br>2, 先在第一个组件里面引入 eventBus，然后调用bus.$emit这个方法，来触发一个自定义事件，然后后面可以带上要传递的数据<br>3，然后在第二个要接收数据的组件里面也引入eventBus，然后用bus.$on方法来监听我们在第一个组件里面创建的自定义事件，然后写个回调函数，当自定义事件在第一个组件被触发之后，我们在第二个组件里面就监听到了，然后第一个组件传递的数据也会默认的当作回调函数的参数。<br>（我们最好把第二个组件里面监听的部分写到生命周期钩子函数里面）  </p>
+<h3 id="总结，和子传父很类似，通信大同小异，也需要一个介质，在这里介质就是eventBus这个中央事件总线，通过-emit和-on两个方法来触发和监听。"><a href="#总结，和子传父很类似，通信大同小异，也需要一个介质，在这里介质就是eventBus这个中央事件总线，通过-emit和-on两个方法来触发和监听。" class="headerlink" title="总结，和子传父很类似，通信大同小异，也需要一个介质，在这里介质就是eventBus这个中央事件总线，通过%emit和$on两个方法来触发和监听。"></a>总结，和子传父很类似，通信大同小异，也需要一个介质，在这里介质就是eventBus这个中央事件总线，通过%emit和$on两个方法来触发和监听。</h3><p>下面是一个小demo</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/19/Vue父子组件通信/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1362,131 +1483,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/01/Hexo遇到的一些问题/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="高山流水">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head_1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="高山流水">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/05/01/Hexo遇到的一些问题/" itemprop="url">
-                  Hexo遇到的一些问题
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-01T12:41:09+08:00">
-                2017-05-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="问题1"><a href="#问题1" class="headerlink" title="问题1"></a>问题1</h3><blockquote>
-<p>这里先记录一点hexo的事情  就是写markdown的时候报了好多次错<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/05/01/Hexo遇到的一些问题/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1536,7 +1532,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1549,7 +1545,7 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
