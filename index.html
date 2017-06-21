@@ -263,6 +263,140 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/21/日常算法学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="高山流水">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head_1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="高山流水">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/06/21/日常算法学习/" itemprop="url">
+                  日常算法学习
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-21T16:22:04+08:00">
+                2017-06-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+              <a id="more"></a>
+<h5 id="回文串"><a href="#回文串" class="headerlink" title="回文串"></a>回文串</h5><p><img src="http://op7mej7ur.bkt.clouddn.com/17-6-21/20166665.jpg" alt=""><br>第一道很简单，主要是理解什么是回文串，<br>大致思想就是 先把回文串读进来，赋给一个空字符串，然后拆分，倒置，再拼回字符串，倒置后的和倒置前的对比下，如果相同就是回文串，反之不是。(代码直接在浏览器控制台运行就可以了)  </p>
+<pre><code>var test = &apos;weeeeeeeew&apos;;
+function isMemo (string){
+    if(typeof string !== &apos;string&apos;){
+        return false;
+    }
+    var is = false;
+    var newstr = string.split(&apos;&apos;).reverse().join(&apos;&apos;);
+    if(newstr === string){
+        is = true;
+    }
+    return is;
+}
+isMemo(test);
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/20/Vue组件间通信/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1365,127 +1499,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/01/URL编码问题/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="高山流水">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head_1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="高山流水">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/05/01/URL编码问题/" itemprop="url">
-                  URL编码问题
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-01T19:55:58+08:00">
-                2017-05-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="关于编码的一些问题"><a href="#关于编码的一些问题" class="headerlink" title="关于编码的一些问题"></a>关于编码的一些问题</h1><p>本来想着这几天把博客移过来的，无奈要期末考试了，时间太少，想做的事情太多，博客就慢慢移，前两篇都是ajax，那就再写一个ajax的把这部分完结掉。<br>ajax前两篇博客简单总结了下，就想着完善下前一段时间自己封装的ajax插件，封转的时候参考了参考其他人写的，不可避免的一个步骤就是对URl的编码，又抓紧时间看书翻博客，看大神们是怎么解决这个问题的（PS：阮一峰大神的博客写的就是好！）  </p>
-<h4 id="步入正题"><a href="#步入正题" class="headerlink" title="步入正题"></a>步入正题</h4><p>占坑 </p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1535,7 +1548,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1548,7 +1561,7 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
