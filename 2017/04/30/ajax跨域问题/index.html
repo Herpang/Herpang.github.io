@@ -97,18 +97,18 @@
 <meta property="og:url" content="http://yoursite.com/2017/04/30/ajax跨域问题/index.html">
 <meta property="og:site_name" content="高山流水">
 <meta property="og:description" content="跨域问题我们先回顾一下域名地址的组成：">
-<meta property="og:image" content="http://i4.buimg.com/567571/b76ccf6e16fd2cdf.png">
-<meta property="og:image" content="http://i4.buimg.com/567571/ee26f2fc14cf097c.png">
-<meta property="og:image" content="http://i1.piimg.com/567571/9c7713ff09600c61.png">
-<meta property="og:image" content="http://i4.buimg.com/567571/85f93e574cd6faec.png">
-<meta property="og:image" content="http://i4.buimg.com/567571/d88feece432ab1fd.png">
-<meta property="og:image" content="http://i2.muimg.com/567571/cce16fed2e6bd6fa.png">
-<meta property="og:image" content="http://i4.buimg.com/567571/33eb1755354c5c05.png">
-<meta property="og:updated_time" content="2017-05-19T07:50:19.300Z">
+<meta property="og:image" content="http://op7mej7ur.bkt.clouddn.com/17-6-26/51050647.jpg">
+<meta property="og:image" content="http://op7mej7ur.bkt.clouddn.com/17-6-26/68668064.jpg">
+<meta property="og:image" content="http://op7mej7ur.bkt.clouddn.com/17-6-26/41907770.jpg">
+<meta property="og:image" content="http://op7mej7ur.bkt.clouddn.com/17-6-26/41337069.jpg">
+<meta property="og:image" content="http://op7mej7ur.bkt.clouddn.com/17-6-26/13185790.jpg">
+<meta property="og:image" content="http://op7mej7ur.bkt.clouddn.com/17-6-26/42230620.jpg">
+<meta property="og:image" content="http://op7mej7ur.bkt.clouddn.com/17-6-26/28284976.jpg">
+<meta property="og:updated_time" content="2017-06-26T09:21:41.086Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ajax跨域问题">
 <meta name="twitter:description" content="跨域问题我们先回顾一下域名地址的组成：">
-<meta name="twitter:image" content="http://i4.buimg.com/567571/b76ccf6e16fd2cdf.png">
+<meta name="twitter:image" content="http://op7mej7ur.bkt.clouddn.com/17-6-26/51050647.jpg">
 
 
 
@@ -360,7 +360,7 @@ google （主域名）
 <h3 id="解决方式1"><a href="#解决方式1" class="headerlink" title="解决方式1"></a>解决方式1</h3><p>代理，通过后台服务器去请求资源，得到响应之后，再将数据返回给前端，这种属于后台技术，不过多阐述。</p>
 <h3 id="解决方式2"><a href="#解决方式2" class="headerlink" title="解决方式2"></a>解决方式2</h3><p>JSONP<br>我们知道script标签是可以引用其他地方的资源的（如在线引入jquery）<br>也就是说script标签是不受同源策略的影响的，我们将url写入script的src里面就会发送一个get请求。<br>但是这样还不够，因为script标签是会把请求得到的数据当作js代码来执行的，而我们大部分情况下请求的并不是可以执行的js代码。  </p>
 <p>不过，随着这种情况的发展，就发展出来了一种非正式的jsonp协议，就是说我们在请求的时候，最url最后写上回调函数的函数名，那么服务器返回的时候就会将返回的数据作为刚刚我们给服务器的函数的参数，这样一来，我们预先设定好回调函数就可以处理返回的数据了。  </p>
-<p>那么，下面我们开始实践，思路就是，先写好回调函数，然后利用js动态的在dom树里面添加一个script节点，将我们要请求的url加进去，就可以了，服务器响应返回数据之后，会执行我们预先设定好的回调函数。 下面上代码。<br><img src="http://i4.buimg.com/567571/b76ccf6e16fd2cdf.png" alt="">  </p>
+<p>那么，下面我们开始实践，思路就是，先写好回调函数，然后利用js动态的在dom树里面添加一个script节点，将我们要请求的url加进去，就可以了，服务器响应返回数据之后，会执行我们预先设定好的回调函数。 下面上代码。<br><img src="http://op7mej7ur.bkt.clouddn.com/17-6-26/51050647.jpg" alt="">  </p>
 <pre><code>&lt;script&gt;
 var vi = document.getElementById(&apos;view&apos;), //显示结果
 t = document.getElementById(&apos;test&apos;), //输入框
@@ -396,13 +396,13 @@ t1.onclick = function(){
 click();
 }
 &lt;/script&gt;
-</code></pre><p>这段代码会请求淘宝的一个接口，然后返回前10个商品的商品名和货号（我只显示了5个）<br><img src="http://i4.buimg.com/567571/ee26f2fc14cf097c.png" alt="">    </p>
-<h4 id="总结一下，JSONP的优点是简单实用，并且兼容版本较低的浏览器，"><a href="#总结一下，JSONP的优点是简单实用，并且兼容版本较低的浏览器，" class="headerlink" title="总结一下，JSONP的优点是简单实用，并且兼容版本较低的浏览器，"></a>总结一下，JSONP的优点是简单实用，并且兼容版本较低的浏览器，</h4><h4 id="缺点就是只能发送POST请求。"><a href="#缺点就是只能发送POST请求。" class="headerlink" title="缺点就是只能发送POST请求。"></a>缺点就是只能发送POST请求。</h4><h3 id="解决方式3-CORS"><a href="#解决方式3-CORS" class="headerlink" title="解决方式3  CORS"></a>解决方式3  CORS</h3><p> <strong>CORS需要浏览器和服务器同时支持 </strong> </p>
+</code></pre><p>这段代码会请求淘宝的一个接口，然后返回前10个商品的商品名和货号（我只显示了5个）<br><img src="http://op7mej7ur.bkt.clouddn.com/17-6-26/68668064.jpg" alt="">    </p>
+<h4 id="总结一下，JSONP的优点是简单实用，并且兼容版本较低的浏览器，"><a href="#总结一下，JSONP的优点是简单实用，并且兼容版本较低的浏览器，" class="headerlink" title="总结一下，JSONP的优点是简单实用，并且兼容版本较低的浏览器，"></a>总结一下，JSONP的优点是简单实用，并且兼容版本较低的浏览器，</h4><h4 id="缺点就是只能发送POST请求。"><a href="#缺点就是只能发送POST请求。" class="headerlink" title="缺点就是只能发送POST请求。"></a>缺点就是只能发送POST请求。</h4><h3 id="解决方式3-CORS"><a href="#解决方式3-CORS" class="headerlink" title="解决方式3  CORS"></a>解决方式3  CORS</h3><p> <strong> CORS需要浏览器和服务器同时支持 </strong> </p>
 <p>CORS全称Cross-Origin Resource Sharing，是HTML5定义的访问跨域资源的规范。<br>下面说CORS具体是怎么实现的<br>CORS的请求分两类，简单请求和复杂请求，这里主要说简单请求，其实基本上能满足大部分的需求了。<br>简单请求的请求方法只能是 POST,HEAD,GET里面的其中一个，<strong>并且</strong>，不能有自定义的请求头，严格的讲看下面这个图（廖雪峰大神的博客里面截的）  </p>
-<p><img src="http://i1.piimg.com/567571/9c7713ff09600c61.png" alt="">  </p>
-<h3 id="说完请求的分类，下面说下具体流程"><a href="#说完请求的分类，下面说下具体流程" class="headerlink" title="说完请求的分类，下面说下具体流程"></a>说完请求的分类，下面说下具体流程</h3><h4 id="对于简单请求，也是我们用的最多的，浏览器发现是跨域请求的时候，会自动的在请求头加一个origin字段，来标识这个请求是从哪来的（其实就是源地址），"><a href="#对于简单请求，也是我们用的最多的，浏览器发现是跨域请求的时候，会自动的在请求头加一个origin字段，来标识这个请求是从哪来的（其实就是源地址），" class="headerlink" title="对于简单请求，也是我们用的最多的，浏览器发现是跨域请求的时候，会自动的在请求头加一个origin字段，来标识这个请求是从哪来的（其实就是源地址），"></a>对于简单请求，也是我们用的最多的，浏览器发现是跨域请求的时候，会自动的在请求头加一个origin字段，来标识这个请求是从哪来的（其实就是源地址），</h4><h4 id="如果服务器觉得可以接受，那么就会在响应头上加上Access-Control-Allow-Origin字段，字段里面填写我们发过去的origin里面的值，或者-号（表示接受任意域名的请求），这样一来，浏览器接到响应之后检查响应头，如果发现没有Access-Control-Allow-Origin字段-返回的信息我们就用不了了，就表示跨域失败"><a href="#如果服务器觉得可以接受，那么就会在响应头上加上Access-Control-Allow-Origin字段，字段里面填写我们发过去的origin里面的值，或者-号（表示接受任意域名的请求），这样一来，浏览器接到响应之后检查响应头，如果发现没有Access-Control-Allow-Origin字段-返回的信息我们就用不了了，就表示跨域失败" class="headerlink" title="如果服务器觉得可以接受，那么就会在响应头上加上Access-Control-Allow-Origin字段，字段里面填写我们发过去的origin里面的值，或者*号（表示接受任意域名的请求），这样一来，浏览器接到响应之后检查响应头，如果发现没有Access-Control-Allow-Origin字段,返回的信息我们就用不了了，就表示跨域失败"></a>如果服务器觉得可以接受，那么就会在响应头上加上Access-Control-Allow-Origin字段，字段里面填写我们发过去的origin里面的值，或者*号（表示接受任意域名的请求），这样一来，浏览器接到响应之后检查响应头，如果发现没有Access-Control-Allow-Origin字段,返回的信息我们就用不了了，就表示跨域失败</h4><h4 id="如果Access-Control-Allow-Origin字段里面的值是我们的源地址或者-号，那么表示跨域成功"><a href="#如果Access-Control-Allow-Origin字段里面的值是我们的源地址或者-号，那么表示跨域成功" class="headerlink" title="如果Access-Control-Allow-Origin字段里面的值是我们的源地址或者*号，那么表示跨域成功"></a>如果Access-Control-Allow-Origin字段里面的值是我们的源地址或者*号，那么表示跨域成功</h4><h3 id="可见，跨域成不成功决定权在服务器手里。"><a href="#可见，跨域成不成功决定权在服务器手里。" class="headerlink" title="可见，跨域成不成功决定权在服务器手里。"></a>可见，跨域成不成功决定权在服务器手里。</h3><p>  但是，要注意第一句话，要服务器和浏览器同时支持，<br>  但是在实际测试的时候origin的值是null，等我弄明白再填这个坑<br>  <img src="http://i4.buimg.com/567571/85f93e574cd6faec.png" alt=""><br>  这里找了个接受所有类型的接口 算是测试成功了吧<br>  <img src="http://i4.buimg.com/567571/d88feece432ab1fd.png" alt=""><br>  但是，还是觉得差点什么，等我再查查博客吧。  </p>
-<h2 id="再说一下复杂请求，"><a href="#再说一下复杂请求，" class="headerlink" title="再说一下复杂请求，"></a>再说一下复杂请求，</h2><h4 id="复杂请求比简单请求多了一个预检请求（preflight）"><a href="#复杂请求比简单请求多了一个预检请求（preflight）" class="headerlink" title="复杂请求比简单请求多了一个预检请求（preflight）"></a>复杂请求比简单请求多了一个预检请求（preflight）</h4><p>就是说，当我们发送请求的时候，浏览器检查发现是复杂请求，就会先给目标服务器发送一个预检请求<br><img src="http://i2.muimg.com/567571/cce16fed2e6bd6fa.png" alt="">  </p>
-<p>服务器会检查这三个字段Origin、Access-Control-Request-Method和Access-Control-Request-Headers，并回应<br><img src="http://i4.buimg.com/567571/33eb1755354c5c05.png" alt=""><br>如果Access-Control-Allow-Origin字段使我们的源地址或者*号，就表示同意跨域请求。如果服务器拒绝，那么响应头就不会有cors相关的字段<br>至此预检请求完成，如果成功，然后浏览器就会正式的发送请求，以后的每次请求也都和简单请求一样了。  </p>
+<p><img src="http://op7mej7ur.bkt.clouddn.com/17-6-26/41907770.jpg" alt="">  </p>
+<h3 id="说完请求的分类，下面说下具体流程"><a href="#说完请求的分类，下面说下具体流程" class="headerlink" title="说完请求的分类，下面说下具体流程"></a>说完请求的分类，下面说下具体流程</h3><h4 id="对于简单请求，也是我们用的最多的，浏览器发现是跨域请求的时候，会自动的在请求头加一个origin字段，来标识这个请求是从哪来的（其实就是源地址），"><a href="#对于简单请求，也是我们用的最多的，浏览器发现是跨域请求的时候，会自动的在请求头加一个origin字段，来标识这个请求是从哪来的（其实就是源地址），" class="headerlink" title="对于简单请求，也是我们用的最多的，浏览器发现是跨域请求的时候，会自动的在请求头加一个origin字段，来标识这个请求是从哪来的（其实就是源地址），"></a>对于简单请求，也是我们用的最多的，浏览器发现是跨域请求的时候，会自动的在请求头加一个origin字段，来标识这个请求是从哪来的（其实就是源地址），</h4><h4 id="如果服务器觉得可以接受，那么就会在响应头上加上Access-Control-Allow-Origin字段，字段里面填写我们发过去的origin里面的值，或者-号（表示接受任意域名的请求），这样一来，浏览器接到响应之后检查响应头，如果发现没有Access-Control-Allow-Origin字段-返回的信息我们就用不了了，就表示跨域失败"><a href="#如果服务器觉得可以接受，那么就会在响应头上加上Access-Control-Allow-Origin字段，字段里面填写我们发过去的origin里面的值，或者-号（表示接受任意域名的请求），这样一来，浏览器接到响应之后检查响应头，如果发现没有Access-Control-Allow-Origin字段-返回的信息我们就用不了了，就表示跨域失败" class="headerlink" title="如果服务器觉得可以接受，那么就会在响应头上加上Access-Control-Allow-Origin字段，字段里面填写我们发过去的origin里面的值，或者*号（表示接受任意域名的请求），这样一来，浏览器接到响应之后检查响应头，如果发现没有Access-Control-Allow-Origin字段,返回的信息我们就用不了了，就表示跨域失败"></a>如果服务器觉得可以接受，那么就会在响应头上加上Access-Control-Allow-Origin字段，字段里面填写我们发过去的origin里面的值，或者*号（表示接受任意域名的请求），这样一来，浏览器接到响应之后检查响应头，如果发现没有Access-Control-Allow-Origin字段,返回的信息我们就用不了了，就表示跨域失败</h4><h4 id="如果Access-Control-Allow-Origin字段里面的值是我们的源地址或者-号，那么表示跨域成功"><a href="#如果Access-Control-Allow-Origin字段里面的值是我们的源地址或者-号，那么表示跨域成功" class="headerlink" title="如果Access-Control-Allow-Origin字段里面的值是我们的源地址或者*号，那么表示跨域成功"></a>如果Access-Control-Allow-Origin字段里面的值是我们的源地址或者*号，那么表示跨域成功</h4><h3 id="可见，跨域成不成功决定权在服务器手里。"><a href="#可见，跨域成不成功决定权在服务器手里。" class="headerlink" title="可见，跨域成不成功决定权在服务器手里。"></a>可见，跨域成不成功决定权在服务器手里。</h3><p>  但是，要注意第一句话，要服务器和浏览器同时支持，<br>  但是在实际测试的时候origin的值是null，等我弄明白再填这个坑<br>  <img src="http://op7mej7ur.bkt.clouddn.com/17-6-26/41337069.jpg" alt=""><br>  这里找了个接受所有类型的接口 算是测试成功了吧<br>  <img src="http://op7mej7ur.bkt.clouddn.com/17-6-26/13185790.jpg" alt=""><br>  但是，还是觉得差点什么，等我再查查博客吧。  </p>
+<h2 id="再说一下复杂请求，"><a href="#再说一下复杂请求，" class="headerlink" title="再说一下复杂请求，"></a>再说一下复杂请求，</h2><h4 id="复杂请求比简单请求多了一个预检请求（preflight）"><a href="#复杂请求比简单请求多了一个预检请求（preflight）" class="headerlink" title="复杂请求比简单请求多了一个预检请求（preflight）"></a>复杂请求比简单请求多了一个预检请求（preflight）</h4><p>就是说，当我们发送请求的时候，浏览器检查发现是复杂请求，就会先给目标服务器发送一个预检请求<br><img src="http://op7mej7ur.bkt.clouddn.com/17-6-26/42230620.jpg" alt="">  </p>
+<p>服务器会检查这三个字段Origin、Access-Control-Request-Method和Access-Control-Request-Headers，并回应<br><img src="http://op7mej7ur.bkt.clouddn.com/17-6-26/28284976.jpg" alt=""><br>如果Access-Control-Allow-Origin字段使我们的源地址或者*号，就表示同意跨域请求。如果服务器拒绝，那么响应头就不会有cors相关的字段<br>至此预检请求完成，如果成功，然后浏览器就会正式的发送请求，以后的每次请求也都和简单请求一样了。  </p>
 <h3 id="解决方式3"><a href="#解决方式3" class="headerlink" title="解决方式3"></a>解决方式3</h3><p>WebSocket协议，这是一种通信协议，我现在还不太了解，但了解一点关于跨域的内容<br>WebSocket协议的请求头里面会有Origin字段，也是表示请求源，正是因为这个字段，该协议才不受同源策略的影响。<br>收到请求的时候，服务器会根据这个字段判断此次是否通信，如果该地址在白名单里面，服务器就会作出回应。</p>
 
       
@@ -530,7 +530,7 @@ click();
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
