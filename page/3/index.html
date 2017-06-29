@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="算法基础," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -90,19 +90,15 @@
 
 
 
-<meta name="description" content="实验室算法日常记录">
-<meta name="keywords" content="算法基础">
-<meta property="og:type" content="article">
-<meta property="og:title" content="日常算法学习">
-<meta property="og:url" content="http://yoursite.com/2017/06/21/日常算法学习/index.html">
+<meta name="description" content="书山有路，学海无涯">
+<meta property="og:type" content="website">
+<meta property="og:title" content="高山流水">
+<meta property="og:url" content="http://yoursite.com/page/3/index.html">
 <meta property="og:site_name" content="高山流水">
-<meta property="og:description" content="实验室算法日常记录">
-<meta property="og:image" content="http://op7mej7ur.bkt.clouddn.com/17-6-21/20166665.jpg">
-<meta property="og:updated_time" content="2017-06-21T08:54:31.314Z">
+<meta property="og:description" content="书山有路，学海无涯">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="日常算法学习">
-<meta name="twitter:description" content="实验室算法日常记录">
-<meta name="twitter:image" content="http://op7mej7ur.bkt.clouddn.com/17-6-21/20166665.jpg">
+<meta name="twitter:title" content="高山流水">
+<meta name="twitter:description" content="书山有路，学海无涯">
 
 
 
@@ -130,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/06/21/日常算法学习/"/>
+  <link rel="canonical" href="http://yoursite.com/page/3/"/>
 
 
 
 
 
-  <title>日常算法学习 | 高山流水</title>
+  <title>高山流水</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -161,7 +157,9 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-left 
+   page-home 
+ ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -254,9 +252,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
 
   
 
@@ -265,7 +263,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/21/日常算法学习/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/30/js原型链的一知半解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="高山流水">
@@ -286,7 +284,10 @@
             
             
               
-                日常算法学习
+                
+                <a class="post-title-link" href="/2017/04/30/js原型链的一知半解/" itemprop="url">
+                  JS原型链的一知半解
+                </a>
               
             
           </h1>
@@ -301,8 +302,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-21T16:22:04+08:00">
-                2017-06-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-30T13:57:43+08:00">
+                2017-04-30
               </time>
             
 
@@ -336,92 +337,178 @@
       
 
       
-        <h5 id="实验室算法日常记录"><a href="#实验室算法日常记录" class="headerlink" title="实验室算法日常记录"></a>实验室算法日常记录</h5><a id="more"></a>  
-<h5 id="回文串"><a href="#回文串" class="headerlink" title="回文串"></a>回文串</h5><p><img src="http://op7mej7ur.bkt.clouddn.com/17-6-21/20166665.jpg" alt=""><br>第一道很简单，主要是理解什么是回文串，<br>大致思想就是 先把回文串读进来，赋给一个空字符串，然后拆分，倒置，再拼回字符串，倒置后的和倒置前的对比下，如果相同就是回文串，反之不是。(代码直接在浏览器控制台运行就可以了)  </p>
-<pre><code>var test = &apos;weeeeeeeew&apos;;
-function isMemo (string){
-    if(typeof string !== &apos;string&apos;){
-        return false;
-    }
-    var is = false;
-    var newstr = string.split(&apos;&apos;).reverse().join(&apos;&apos;);
-    if(newstr === string){
-        is = true;
-    }
-    return is;
-}
-isMemo(test);
-</code></pre>
+        
+          <h1 id="学习JS的一些记录和见解"><a href="#学习JS的一些记录和见解" class="headerlink" title="学习JS的一些记录和见解"></a>学习JS的一些记录和见解</h1><p>&nbsp; &nbsp; &nbsp; &nbsp;原型，我们每创建一个新函数都有为这个函数创建一个原型对象，<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/30/js原型链的一知半解/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
       
     </div>
 
     <div>
       
-        
-
-      
     </div>
 
     <div>
       
-        
-
-      
     </div>
 
     <div>
-      
-        
-
       
     </div>
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/算法基础/" rel="tag"># 算法基础</a>
-          
-        </div>
+
       
 
       
-        
-      
 
       
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/06/26/Webpack学习记录-一/" rel="next" title="Webpack学习记录(一)">
-                <i class="fa fa-chevron-left"></i> Webpack学习记录(一)
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/20/Vue组件间通信/" rel="prev" title="Vue组件间通信">
-                Vue组件间通信 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
       
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
+    
+      
 
-    <div class="post-spread">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/30/记录下心情/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="高山流水">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head_1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="高山流水">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/30/记录下心情/" itemprop="url">
+                  记录下心情
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-30T13:34:17+08:00">
+                2017-04-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="自己的博客"><a href="#自己的博客" class="headerlink" title="自己的博客"></a>自己的博客</h1><p>刚弄好，挺兴奋的，虽然没什么技术含量，用的Hexo+GitHub<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/30/记录下心情/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
       
     </div>
-  </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
+
 
 
           </div>
@@ -429,10 +516,6 @@ isMemo(test);
 
 
           
-  <div class="comments" id="comments">
-    
-  </div>
-
 
         </div>
         
@@ -452,17 +535,8 @@ isMemo(test);
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/head_1.jpg"
@@ -515,22 +589,6 @@ isMemo(test);
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#实验室算法日常记录"><span class="nav-number">1.</span> <span class="nav-text">实验室算法日常记录</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#回文串"><span class="nav-number">2.</span> <span class="nav-text">回文串</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -644,10 +702,6 @@ isMemo(test);
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
-
-
 
   
 

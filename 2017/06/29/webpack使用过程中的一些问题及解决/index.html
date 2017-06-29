@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="算法基础," />
+  <meta name="keywords" content="Webpack," />
 
 
 
@@ -90,19 +90,17 @@
 
 
 
-<meta name="description" content="实验室算法日常记录">
-<meta name="keywords" content="算法基础">
+<meta name="description" content="前言使用webpack也有一段时间了，记录下一路以来遇到的一些问题以及如何解决首先读错误信息是很重要的，虽然有时候觉得自己英文很菜，但静下心来慢慢看一般还是没问题的，实在不行咱还有伟大的谷歌翻译不是，下面正文。">
+<meta name="keywords" content="Webpack">
 <meta property="og:type" content="article">
-<meta property="og:title" content="日常算法学习">
-<meta property="og:url" content="http://yoursite.com/2017/06/21/日常算法学习/index.html">
+<meta property="og:title" content="webpack使用过程中的一些问题及解决">
+<meta property="og:url" content="http://yoursite.com/2017/06/29/webpack使用过程中的一些问题及解决/index.html">
 <meta property="og:site_name" content="高山流水">
-<meta property="og:description" content="实验室算法日常记录">
-<meta property="og:image" content="http://op7mej7ur.bkt.clouddn.com/17-6-21/20166665.jpg">
-<meta property="og:updated_time" content="2017-06-21T08:54:31.314Z">
+<meta property="og:description" content="前言使用webpack也有一段时间了，记录下一路以来遇到的一些问题以及如何解决首先读错误信息是很重要的，虽然有时候觉得自己英文很菜，但静下心来慢慢看一般还是没问题的，实在不行咱还有伟大的谷歌翻译不是，下面正文。">
+<meta property="og:updated_time" content="2017-06-29T06:59:28.975Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="日常算法学习">
-<meta name="twitter:description" content="实验室算法日常记录">
-<meta name="twitter:image" content="http://op7mej7ur.bkt.clouddn.com/17-6-21/20166665.jpg">
+<meta name="twitter:title" content="webpack使用过程中的一些问题及解决">
+<meta name="twitter:description" content="前言使用webpack也有一段时间了，记录下一路以来遇到的一些问题以及如何解决首先读错误信息是很重要的，虽然有时候觉得自己英文很菜，但静下心来慢慢看一般还是没问题的，实在不行咱还有伟大的谷歌翻译不是，下面正文。">
 
 
 
@@ -130,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/06/21/日常算法学习/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/06/29/webpack使用过程中的一些问题及解决/"/>
 
 
 
 
 
-  <title>日常算法学习 | 高山流水</title>
+  <title>webpack使用过程中的一些问题及解决 | 高山流水</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -265,7 +263,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/21/日常算法学习/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/29/webpack使用过程中的一些问题及解决/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="高山流水">
@@ -286,7 +284,7 @@
             
             
               
-                日常算法学习
+                webpack使用过程中的一些问题及解决
               
             
           </h1>
@@ -301,8 +299,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-21T16:22:04+08:00">
-                2017-06-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-29T14:49:49+08:00">
+                2017-06-29
               </time>
             
 
@@ -336,22 +334,9 @@
       
 
       
-        <h5 id="实验室算法日常记录"><a href="#实验室算法日常记录" class="headerlink" title="实验室算法日常记录"></a>实验室算法日常记录</h5><a id="more"></a>  
-<h5 id="回文串"><a href="#回文串" class="headerlink" title="回文串"></a>回文串</h5><p><img src="http://op7mej7ur.bkt.clouddn.com/17-6-21/20166665.jpg" alt=""><br>第一道很简单，主要是理解什么是回文串，<br>大致思想就是 先把回文串读进来，赋给一个空字符串，然后拆分，倒置，再拼回字符串，倒置后的和倒置前的对比下，如果相同就是回文串，反之不是。(代码直接在浏览器控制台运行就可以了)  </p>
-<pre><code>var test = &apos;weeeeeeeew&apos;;
-function isMemo (string){
-    if(typeof string !== &apos;string&apos;){
-        return false;
-    }
-    var is = false;
-    var newstr = string.split(&apos;&apos;).reverse().join(&apos;&apos;);
-    if(newstr === string){
-        is = true;
-    }
-    return is;
-}
-isMemo(test);
-</code></pre>
+        <p>前言<br>使用webpack也有一段时间了，记录下一路以来遇到的一些问题以及如何解决<br>首先读错误信息是很重要的，虽然有时候觉得自己英文很菜，但静下心来慢慢看一般还是没问题的，实在不行咱还有伟大的谷歌翻译不是，下面正文。<br><a id="more"></a>  </p>
+<h4 id="1，Can’t-resolve-‘style-loader’"><a href="#1，Can’t-resolve-‘style-loader’" class="headerlink" title="1，Can’t resolve ‘style-loader’"></a>1，Can’t resolve ‘style-loader’</h4><p>像这种问题不能加载某些类型的文件，一般都是webpack.config.json文件配置的问题（现在不能省略后缀-loader了），或者说npm安装style-loader出了问题，首先排查这两个地方，一般都能解决  </p>
+<h4 id="2，持续更新…-…"><a href="#2，持续更新…-…" class="headerlink" title="2，持续更新… …"></a>2，持续更新… …</h4>
       
     </div>
 
@@ -380,7 +365,7 @@ isMemo(test);
       
         <div class="post-tags">
           
-            <a href="/tags/算法基础/" rel="tag"># 算法基础</a>
+            <a href="/tags/Webpack/" rel="tag"># Webpack</a>
           
         </div>
       
@@ -393,8 +378,8 @@ isMemo(test);
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/26/Webpack学习记录-一/" rel="next" title="Webpack学习记录(一)">
-                <i class="fa fa-chevron-left"></i> Webpack学习记录(一)
+              <a href="/2017/06/29/Vue入门记录一/" rel="next" title="Vue入门记录一">
+                <i class="fa fa-chevron-left"></i> Vue入门记录一
               </a>
             
           </div>
@@ -403,8 +388,8 @@ isMemo(test);
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/06/20/Vue组件间通信/" rel="prev" title="Vue组件间通信">
-                Vue组件间通信 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/06/27/模块化杂谈/" rel="prev" title="模块化杂谈">
+                模块化杂谈 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -525,7 +510,7 @@ isMemo(test);
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#实验室算法日常记录"><span class="nav-number">1.</span> <span class="nav-text">实验室算法日常记录</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#回文串"><span class="nav-number">2.</span> <span class="nav-text">回文串</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1，Can’t-resolve-‘style-loader’"><span class="nav-number">1.</span> <span class="nav-text">1，Can’t resolve ‘style-loader’</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2，持续更新…-…"><span class="nav-number">2.</span> <span class="nav-text">2，持续更新… …</span></a></li></ol></div>
             
 
           </div>
