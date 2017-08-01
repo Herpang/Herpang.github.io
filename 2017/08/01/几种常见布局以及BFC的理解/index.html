@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="书山有路，学海无涯">
-<meta name="keywords">
+<meta name="description" content="一些理解学习BFC，看了一天的博客，反复敲，到晚上11点要睡觉的时候突然豁然开朗，赶紧写写，发现能写的也就这些，这个东西原来主要是理解。">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Webpack学习记录(一)">
-<meta property="og:url" content="http://yoursite.com/2017/06/26/Webpack学习记录-一/index.html">
+<meta property="og:title" content="几种常见布局以及BFC的理解">
+<meta property="og:url" content="http://yoursite.com/2017/08/01/几种常见布局以及BFC的理解/index.html">
 <meta property="og:site_name" content="高山流水">
-<meta property="og:description" content="书山有路，学海无涯">
-<meta property="og:updated_time" content="2017-06-26T08:50:35.750Z">
+<meta property="og:description" content="一些理解学习BFC，看了一天的博客，反复敲，到晚上11点要睡觉的时候突然豁然开朗，赶紧写写，发现能写的也就这些，这个东西原来主要是理解。">
+<meta property="og:updated_time" content="2017-08-01T15:09:51.274Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Webpack学习记录(一)">
-<meta name="twitter:description" content="书山有路，学海无涯">
+<meta name="twitter:title" content="几种常见布局以及BFC的理解">
+<meta name="twitter:description" content="一些理解学习BFC，看了一天的博客，反复敲，到晚上11点要睡觉的时候突然豁然开朗，赶紧写写，发现能写的也就这些，这个东西原来主要是理解。">
 
 
 
@@ -128,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/06/26/Webpack学习记录-一/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/08/01/几种常见布局以及BFC的理解/"/>
 
 
 
 
 
-  <title>Webpack学习记录(一) | 高山流水</title>
+  <title>几种常见布局以及BFC的理解 | 高山流水</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -263,7 +263,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/26/Webpack学习记录-一/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/01/几种常见布局以及BFC的理解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="高山流水">
@@ -284,7 +284,7 @@
             
             
               
-                Webpack学习记录(一)
+                几种常见布局以及BFC的理解
               
             
           </h1>
@@ -299,8 +299,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-26T16:50:35+08:00">
-                2017-06-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-01T23:08:01+08:00">
+                2017-08-01
               </time>
             
 
@@ -334,7 +334,8 @@
       
 
       
-        
+        <h3 id="一些理解"><a href="#一些理解" class="headerlink" title="一些理解"></a>一些理解</h3><p>学习BFC，看了一天的博客，反复敲，到晚上11点要睡觉的时候突然豁然开朗，赶紧写写，发现能写的也就这些，这个东西原来主要是理解。<a id="more"></a><br>BFC的理解，BFC直译为“块级格式化上下文”，是一个独立的渲染区域<br>作用<br>1，BFC之间互不影响<br>2，BFC内部和外部的元素互不影响<br>3，BFC内部的块级元素在垂直方向挨个放置<br>4，BFC内部的块级元素在垂直方向的margin值会发生重叠<br>5，计算BFC的高度时，发生浮动的子元素也计算在内（此规则可解决 浮动导致父级元素高度塌方的问题）<br>触发BFC的方法<br>1，    根元素自带BFC属性<br>2，    Float属性值不是none时<br>3，    Position属性值为absolute或者fixed的情况时<br>4，    Overflow不是visivle时<br>5，    display为inline-block, table-cell, table-caption, flex, inline-flex<br>BFC的一些实际应用<br>1，    两栏自适应布局<br>2，    解决子元素浮动导致的父级元素高度塌方<br>3，    利用BFC规则，解决垂直方向margin值塌方的问题<br>4，    双飞翼布局实现了BFC，很精妙，圣杯布局则没有实现  </p>
+
       
     </div>
 
@@ -361,6 +362,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
+      
 
       
         
@@ -370,18 +377,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/27/模块化杂谈/" rel="next" title="模块化杂谈">
-                <i class="fa fa-chevron-left"></i> 模块化杂谈
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/06/21/日常算法学习/" rel="prev" title="日常算法学习">
-                日常算法学习 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/07/26/引用类型详解/" rel="prev" title="引用类型详解">
+                引用类型详解 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -429,8 +432,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/head_1.jpg"
@@ -483,6 +495,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一些理解"><span class="nav-number">1.</span> <span class="nav-text">一些理解</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
