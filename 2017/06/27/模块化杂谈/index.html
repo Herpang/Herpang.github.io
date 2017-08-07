@@ -97,7 +97,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/06/27/模块化杂谈/index.html">
 <meta property="og:site_name" content="高山流水">
 <meta property="og:description" content="前言使用Webpack的时候发现自己的模块化思想并不是特别的好，慢慢的翻前端大牛的博客，看了十几篇之后还是迷迷糊糊的，这时候技术博客就派上用场了，所以有了这篇杂谈。前端模块化的规范目前大概有CommonJS，AMD规范，CMD规范，UMD规范和原生的ES6实现，下面慢慢聊。">
-<meta property="og:updated_time" content="2017-06-27T07:00:20.897Z">
+<meta property="og:updated_time" content="2017-08-06T14:43:56.918Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="模块化杂谈">
 <meta name="twitter:description" content="前言使用Webpack的时候发现自己的模块化思想并不是特别的好，慢慢的翻前端大牛的博客，看了十几篇之后还是迷迷糊糊的，这时候技术博客就派上用场了，所以有了这篇杂谈。前端模块化的规范目前大概有CommonJS，AMD规范，CMD规范，UMD规范和原生的ES6实现，下面慢慢聊。">
@@ -339,7 +339,7 @@
 <h3 id="AMD"><a href="#AMD" class="headerlink" title="AMD"></a>AMD</h3><p>AMD规范的诞生很大程度上就是因为上面CommonJS不太适合客户端，客户端的模块最好采用“异步加载”，从名字上就能看出来—-Asynchronous Module Definition，异步模块定义。<br> AMD规范采用异步模式加载模块，模块的加载不影响后面语句的运行，所有依赖这个模块的语句都定义在一个回调函数中，当模块加载完成之后回调函数才会运行，更适合客户端。<br>RequireJS就遵循AMD规范  </p>
 <h3 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h3><p>玉伯写的SeaJS，遵循CMD规范，其实CMD规范在很多地方和AMD规范都很相似，比如说，都是预加载依赖，思想比较明显的不同之处是，CMD规范倾向于在使用过程中提出依赖，就是在代码编写过程中突然发现需要依赖另一个模块，然后在这儿直接引入即可，规范会管理好这些依赖的预加载，而AMD规范比较推崇在一开始就把所有依赖都规定好。<br>其他的一些区别：<br>1，对于依赖的模块，AMD是提前执行，CMD是延迟执行。<br>2，AMD推崇依赖前置，CMD推崇依赖就近。<br>3，AMD的API默认是一个当多个用，CMD的API严格区分，推崇职责单一。</p>
 <h3 id="UMD"><a href="#UMD" class="headerlink" title="UMD"></a>UMD</h3><p>UMD规范可以同时使用CommonJS和AMD规范，它的核心思想是，如果在CommomJS环境下，将函数执行结果交给 module.exports实现Commonjs否则用Amd环境的define实现Amd。<br>这个规范日常用的不多，不多赘述了。  </p>
-<h3 id="原生JS实现"><a href="#原生JS实现" class="headerlink" title="原生JS实现"></a>原生JS实现</h3><p>ES6的语法现在浏览器还没有全部支持，大都支持一部分，所以很多时候我们要用babel来转化一下，在模块化这里，babel默认转化成遵循CommonJS规范的代码。<br>当然ES6模块是支持异步加载的</p>
+<h3 id="原生JS实现"><a href="#原生JS实现" class="headerlink" title="原生JS实现"></a>原生JS实现</h3><p>ES6的语法现在浏览器还没有全部支持，大都支持一部分，所以很多时候我们要用babel来转化一下，在模块化这里，babel默认转化成遵循CommonJS规范的代码。<br>当然ES6模块是支持异步加载的<br>ES6模块的设计思想是尽量的静态化，让依赖关系在编译的时候就被确定，而Commonjs和amd模块都只能在运行的时候才能确定<br>另外，因为原生的api接口很简洁，效率更改，不用引入require.js等外部文件，个人还是很喜欢的<br>import和export</p>
 
       
     </div>
@@ -466,7 +466,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-count">29</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
