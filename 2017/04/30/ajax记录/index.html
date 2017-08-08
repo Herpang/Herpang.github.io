@@ -98,7 +98,7 @@
 <meta property="og:site_name" content="高山流水">
 <meta property="og:description" content="AJAX记录ajax以前也断断续续的学过很多次了，看了很多相关的博客，也简单封装过一次，这次系统的总结一下。">
 <meta property="og:image" content="http://op7mej7ur.bkt.clouddn.com/17-6-26/62672997.jpg">
-<meta property="og:updated_time" content="2017-06-26T09:08:58.519Z">
+<meta property="og:updated_time" content="2017-08-08T11:35:39.741Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ajax记录">
 <meta name="twitter:description" content="AJAX记录ajax以前也断断续续的学过很多次了，看了很多相关的博客，也简单封装过一次，这次系统的总结一下。">
@@ -336,7 +336,7 @@
       
 
       
-        <h1 id="AJAX记录"><a href="#AJAX记录" class="headerlink" title="AJAX记录"></a>AJAX记录</h1><p>ajax以前也断断续续的学过很多次了，看了很多相关的博客，也简单封装过一次，这次系统的总结一下。<br>  <a id="more"></a><br>ajax是一种不需要刷新页面就可以和服务器进行数据交互的技术，在这可以回忆下form表单是怎么和服务器交互的。<br>这里又涉及到了js的单线程机制，就是说js的运行是单线程的，s当我们提交form表单的时候，页面开始刷新，我们这时候就必须等待服务器响应完毕之后给用户返回成功与否，这时候用户做不了其他事情，很影响用户体验。<br>而ajax则可以异步的和服务器进行数据交换，就是说用户在提交数据的时候可以同时进行其他的操作，并不需要等待服务器响应完成。<br><img src="http://op7mej7ur.bkt.clouddn.com/17-6-26/62672997.jpg" alt=""></p>
+        <h1 id="AJAX记录"><a href="#AJAX记录" class="headerlink" title="AJAX记录"></a>AJAX记录</h1><p>ajax以前也断断续续的学过很多次了，看了很多相关的博客，也简单封装过一次，这次系统的总结一下。<br>  <a id="more"></a><br><strong>ajax是一种不需要刷新页面就可以和服务器进行数据交互的技术，其实就是可以异步发送http请求的技术，ajax的核心是XMLHttprequest对象</strong>，在这可以回忆下form表单是怎么和服务器交互的。<br>这里又涉及到了js的单线程机制，就是说js的运行是单线程的，s当我们提交form表单的时候，页面开始刷新，我们这时候就必须等待服务器响应完毕之后给用户返回成功与否，这时候用户做不了其他事情，很影响用户体验。<br>而ajax则可以异步的和服务器进行数据交换，就是说用户在提交数据的时候可以同时进行其他的操作，并不需要等待服务器响应完成。<br><img src="http://op7mej7ur.bkt.clouddn.com/17-6-26/62672997.jpg" alt=""></p>
 <blockquote>
 <p>一次偶然看到了一个这样的理解，可以将ajax技术想象成一个中间层，我们只要把请求交给中间层就可以了，剩下的就让中间层和服务器进行交互，这时候我们就可以做其他事情去了，交互完成之后中间层再返回给我们结果，我们再按照设置好的回调函数进行操作就可以了。  </p>
 </blockquote>
@@ -494,7 +494,7 @@ xhr.send(data);
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
