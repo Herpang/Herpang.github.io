@@ -90,19 +90,19 @@
 
 
 
-<meta name="description" content="学习JS的一些记录和见解&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;原型，我们每创建一个新函数都有为这个函数创建一个原型对象，">
+<meta name="description" content="学习js原型链的一些记录和见解在js里面，每创建一个对象都会设置一个原型属性，指向他的原型对象">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS原型链的一知半解">
 <meta property="og:url" content="http://yoursite.com/2017/04/30/js原型链的一知半解/index.html">
 <meta property="og:site_name" content="高山流水">
-<meta property="og:description" content="学习JS的一些记录和见解&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;原型，我们每创建一个新函数都有为这个函数创建一个原型对象，">
-<meta property="og:image" content="http://i1.piimg.com/567571/9e78f40a07e87e2d.png">
-<meta property="og:updated_time" content="2017-06-21T08:55:17.814Z">
+<meta property="og:description" content="学习js原型链的一些记录和见解在js里面，每创建一个对象都会设置一个原型属性，指向他的原型对象">
+<meta property="og:image" content="http://op7mej7ur.bkt.clouddn.com/17-8-9/4987657.jpg">
+<meta property="og:updated_time" content="2017-08-09T08:50:46.735Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS原型链的一知半解">
-<meta name="twitter:description" content="学习JS的一些记录和见解&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;原型，我们每创建一个新函数都有为这个函数创建一个原型对象，">
-<meta name="twitter:image" content="http://i1.piimg.com/567571/9e78f40a07e87e2d.png">
+<meta name="twitter:description" content="学习js原型链的一些记录和见解在js里面，每创建一个对象都会设置一个原型属性，指向他的原型对象">
+<meta name="twitter:image" content="http://op7mej7ur.bkt.clouddn.com/17-8-9/4987657.jpg">
 
 
 
@@ -336,25 +336,18 @@
       
 
       
-        <h1 id="学习JS的一些记录和见解"><a href="#学习JS的一些记录和见解" class="headerlink" title="学习JS的一些记录和见解"></a>学习JS的一些记录和见解</h1><p>&nbsp; &nbsp; &nbsp; &nbsp;原型，我们每创建一个新函数都有为这个函数创建一个原型对象，<br><a id="more"></a><br>而我们的新函数也会自动的有一个prototype属性，这个属性就指向这个函数的原型对象，函数的原型对象自己也有一个constructor属性，这个属性指向原函数（就是有prototype的属性的那个函数）。<br>&ensp;&ensp;&ensp;&ensp;如果说我们刚刚创建的新函数是个构造函数，那么，用这个构造函数创建出来的每一个实例的prototype属性都会指向构造函数的原型对象.<br>代码示例：  </p>
-<pre><code>Function Person(){
-            Name:’test’,
-            Age:23
-            //指向此函数的原型对象
-            Prototype(此条属性每个函数都有) 
-}
-Var person1 = new person();
-Var person2 = new person();
-</code></pre><p>&ensp;&ensp;&ensp;&ensp;接下来说说原型链，还是刚刚这个图.<br>&ensp;&ensp;&ensp;&ensp;<br>当我们调用person1的name属性的时候，javascript引擎会现在person1本身找一下，看有没有这个属性，如果有，返回此属性，如果没有，就通过prototype属性去他的原型对象上找，如果有，返回，如果没有，再继续上面的步骤，从继续往上找，直到顶端，返回undefinde.<br>&ensp;&ensp;&ensp;&ensp;这个顺序也和重要，比如说Person.prototype上有name这个属性，而我们的实力person1想改变name的值，我们只需要在person1里面再写一遍name属性就可以了，因为我们访问属性的时候是现在自身找的，在自身找到之后会直接返回，就不会往上继续找了。<br>&ensp;&ensp;&ensp;&ensp;下面写一些可能会常用到的api   </p>
-<pre><code>delete删除属性  
+        <h3 id="学习js原型链的一些记录和见解"><a href="#学习js原型链的一些记录和见解" class="headerlink" title="学习js原型链的一些记录和见解"></a>学习js原型链的一些记录和见解</h3><p>在js里面，每创建一个对象都会设置一个原型属性，指向他的原型对象<br><a id="more"></a>  </p>
+<h4 id="什么是原型链"><a href="#什么是原型链" class="headerlink" title="什么是原型链"></a>什么是原型链</h4><p><strong>当我们访问一个对象的属性的时候，会先在自己本身找，如果没有，在沿着由<em>proto</em>这个属性形成的链条往上找，直到找到，或者到链条的尽头返回null</strong></p>
+<h4 id="需要重点理解的几个属性"><a href="#需要重点理解的几个属性" class="headerlink" title="需要重点理解的几个属性"></a>需要重点理解的几个属性</h4><p>1，prototype是函数才会有的属性，而<em>proto</em> 是每个对象都有的属性（<em>proto</em>并不是一个标准的规范，另外，<strong>原型链就是靠<em>proto</em>连接起来的</strong>）<br>2，constructor是原型对象的属性，他指向函数本身<br>3，<em>proto</em>的指向问题，我们说了，每个对象都有<em>proto</em>属性，这个属性都分别指向创建自己的原型对象  </p>
+<h4 id="一张经典的图"><a href="#一张经典的图" class="headerlink" title="一张经典的图"></a>一张经典的图</h4><p><img src="http://op7mej7ur.bkt.clouddn.com/17-8-9/4987657.jpg" alt=""><br>对这张图的一点理解<br>1，f1,f2是构造函数Foo（）的实例，他们两个的<em>proto</em>属性都指向同于个原型对象，也就是构造函数Foo（）的原型对象Foo.prototype<br>f1的原型链：f1–&gt;Foo.prototype–&gt;Object.prototype–&gt;null<br>2,构造函数Foo（）的prototype属性指向自己的原型对象Foo.prototype，而Foo.prototype自己本身的constructor属性指向函数本身，也就是构造函数Foo（）<br>3，构造函数Foo（）本身也有<em>proto</em>属性，<strong>指向创建自己的原型对象</strong>Function.prototype<br>4,O1,O2是两个对象，他们的<em>proto</em>指向创建自己的原型对象，也就是Object.prototype<br>5，原型链的尽头都是null,所有的原型对象都继承字Object.prototype</p>
+<h4 id="一些方法"><a href="#一些方法" class="headerlink" title="一些方法"></a>一些方法</h4><pre><code>delete删除属性  
 比如说我们想删除person1的name属性，
 delete person1.name  
 hasOwnProperty()  用于检测属性是否在实例中，这个方法是object.prototype中的一个方法
  比如说， alert(person1.age) //23
 Person1.hasOwnProperty(“age”); //false
 这样就可以判断出，person1的age属性是从原型得到的  
-</code></pre><p>下面是自己化的一个图<br><img src="http://i1.piimg.com/567571/9e78f40a07e87e2d.png" alt="原型链"><br>&ensp;&ensp;&ensp;&ensp;当然，原型链肯定是和继承分不开的，下一篇就是继承的一些方法和实现。  </p>
-
+</code></pre>
       
     </div>
 
@@ -480,7 +473,7 @@ Person1.hasOwnProperty(“age”); //false
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">31</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -528,7 +521,7 @@ Person1.hasOwnProperty(“age”); //false
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#学习JS的一些记录和见解"><span class="nav-number">1.</span> <span class="nav-text">学习JS的一些记录和见解</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#学习js原型链的一些记录和见解"><span class="nav-number">1.</span> <span class="nav-text">学习js原型链的一些记录和见解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是原型链"><span class="nav-number">1.1.</span> <span class="nav-text">什么是原型链</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#需要重点理解的几个属性"><span class="nav-number">1.2.</span> <span class="nav-text">需要重点理解的几个属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一张经典的图"><span class="nav-number">1.3.</span> <span class="nav-text">一张经典的图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一些方法"><span class="nav-number">1.4.</span> <span class="nav-text">一些方法</span></a></li></ol></li></ol></div>
             
 
           </div>
