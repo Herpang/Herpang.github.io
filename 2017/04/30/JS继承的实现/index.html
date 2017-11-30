@@ -104,7 +104,7 @@
 <meta property="og:image" content="http://op7mej7ur.bkt.clouddn.com/17-8-10/81823277.jpg">
 <meta property="og:image" content="http://op7mej7ur.bkt.clouddn.com/17-8-10/37936264.jpg">
 <meta property="og:image" content="http://op7mej7ur.bkt.clouddn.com/17-8-10/2512622.jpg">
-<meta property="og:updated_time" content="2017-08-10T15:04:43.320Z">
+<meta property="og:updated_time" content="2017-09-18T06:20:05.965Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS继承的实现">
 <meta name="twitter:description" content="继承的实现">
@@ -348,7 +348,7 @@
 <h4 id="构造函数继承"><a href="#构造函数继承" class="headerlink" title="构造函数继承"></a>构造函数继承</h4><p><img src="http://op7mej7ur.bkt.clouddn.com/17-8-10/55448556.jpg" alt=""><br>用call或者apply方法改变this的指向，只能继承父类构造函数的一些方法，无法继承原型上的方法，原型链就不画了  </p>
 <h4 id="组合继承"><a href="#组合继承" class="headerlink" title="组合继承"></a>组合继承</h4><p>其实就是原型链继承和构造函数继承组合到一起<br><img src="http://op7mej7ur.bkt.clouddn.com/17-8-10/91388048.jpg" alt="">  </p>
 <h4 id="原型继承"><a href="#原型继承" class="headerlink" title="原型继承"></a>原型继承</h4><p><img src="http://op7mej7ur.bkt.clouddn.com/17-8-10/81823277.jpg" alt=""><br>重点是Object函数，很巧妙的用了一个空的构造函数，这种继承的思想是不必显式的创建一个子类，直接利用父类的原型来创建一个新的实例  </p>
-<h4 id="寄生继承"><a href="#寄生继承" class="headerlink" title="寄生继承"></a>寄生继承</h4><p>其实和原型继承的思想很像，就是在object函数里面增强了一下，封装了过程，这里值写一下<br><img src="http://op7mej7ur.bkt.clouddn.com/17-8-10/37936264.jpg" alt="">  </p>
+<h4 id="寄生继承"><a href="#寄生继承" class="headerlink" title="寄生继承"></a>寄生继承</h4><p>其实和原型继承的思想很像，就是在object函数里面增强了一下，封装了过程，这里值写一下,<br>其实就是借用一个空构造函数，然后将空构造函数的实例紧接着增强一下，增加我们需要的方法，然后返回这个实例。<br><img src="http://op7mej7ur.bkt.clouddn.com/17-8-10/37936264.jpg" alt="">  </p>
 <h4 id="寄生组合继承"><a href="#寄生组合继承" class="headerlink" title="寄生组合继承"></a>寄生组合继承</h4><p>重点来了，前面说的组合继承卫衣的一点小问题就是调用了两次父类的构造函数，而我们这种寄生组合继承可以解决这个问题，看代码<br><img src="http://op7mej7ur.bkt.clouddn.com/17-8-10/2512622.jpg" alt=""></p>
 
       
@@ -476,7 +476,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-count">33</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

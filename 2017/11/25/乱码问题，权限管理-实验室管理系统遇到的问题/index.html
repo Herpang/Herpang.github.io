@@ -90,19 +90,17 @@
 
 
 
-<meta name="description" content="学习js原型链的一些记录和见解在js里面，每创建一个对象都会设置一个原型属性，指向他的原型对象">
+<meta name="description" content="刚结了项目，总结下遇到的一些问题">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS原型链的一知半解">
-<meta property="og:url" content="http://yoursite.com/2017/04/30/js原型链的一知半解/index.html">
+<meta property="og:title" content="乱码问题，权限管理--实验室管理系统遇到的问题">
+<meta property="og:url" content="http://yoursite.com/2017/11/25/乱码问题，权限管理-实验室管理系统遇到的问题/index.html">
 <meta property="og:site_name" content="高山流水">
-<meta property="og:description" content="学习js原型链的一些记录和见解在js里面，每创建一个对象都会设置一个原型属性，指向他的原型对象">
-<meta property="og:image" content="http://op7mej7ur.bkt.clouddn.com/17-8-9/4987657.jpg">
-<meta property="og:updated_time" content="2017-08-09T08:50:46.735Z">
+<meta property="og:description" content="刚结了项目，总结下遇到的一些问题">
+<meta property="og:updated_time" content="2017-11-30T04:31:15.699Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS原型链的一知半解">
-<meta name="twitter:description" content="学习js原型链的一些记录和见解在js里面，每创建一个对象都会设置一个原型属性，指向他的原型对象">
-<meta name="twitter:image" content="http://op7mej7ur.bkt.clouddn.com/17-8-9/4987657.jpg">
+<meta name="twitter:title" content="乱码问题，权限管理--实验室管理系统遇到的问题">
+<meta name="twitter:description" content="刚结了项目，总结下遇到的一些问题">
 
 
 
@@ -130,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/30/js原型链的一知半解/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/11/25/乱码问题，权限管理-实验室管理系统遇到的问题/"/>
 
 
 
 
 
-  <title>JS原型链的一知半解 | 高山流水</title>
+  <title>乱码问题，权限管理--实验室管理系统遇到的问题 | 高山流水</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -265,7 +263,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/30/js原型链的一知半解/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/25/乱码问题，权限管理-实验室管理系统遇到的问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="高山流水">
@@ -286,7 +284,7 @@
             
             
               
-                JS原型链的一知半解
+                乱码问题，权限管理--实验室管理系统遇到的问题
               
             
           </h1>
@@ -301,8 +299,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-30T13:57:43+08:00">
-                2017-04-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-25T15:12:13+08:00">
+                2017-11-25
               </time>
             
 
@@ -336,18 +334,9 @@
       
 
       
-        <h3 id="学习js原型链的一些记录和见解"><a href="#学习js原型链的一些记录和见解" class="headerlink" title="学习js原型链的一些记录和见解"></a>学习js原型链的一些记录和见解</h3><p>在js里面，每创建一个对象都会设置一个原型属性，指向他的原型对象<br><a id="more"></a>  </p>
-<h4 id="什么是原型链"><a href="#什么是原型链" class="headerlink" title="什么是原型链"></a>什么是原型链</h4><p><strong>当我们访问一个对象的属性的时候，会先在自己本身找，如果没有，在沿着由<em>proto</em>这个属性形成的链条往上找，直到找到，或者到链条的尽头返回null</strong></p>
-<h4 id="需要重点理解的几个属性"><a href="#需要重点理解的几个属性" class="headerlink" title="需要重点理解的几个属性"></a>需要重点理解的几个属性</h4><p>1，prototype是函数才会有的属性，而<em>proto</em> 是每个对象都有的属性（<em>proto</em>并不是一个标准的规范，另外，<strong>原型链就是靠<em>proto</em>连接起来的</strong>）<br>2，constructor是原型对象的属性，他指向函数本身<br>3，<em>proto</em>的指向问题，我们说了，每个对象都有<em>proto</em>属性，这个属性都分别指向创建自己的原型对象  </p>
-<h4 id="一张经典的图"><a href="#一张经典的图" class="headerlink" title="一张经典的图"></a>一张经典的图</h4><p><img src="http://op7mej7ur.bkt.clouddn.com/17-8-9/4987657.jpg" alt=""><br>对这张图的一点理解<br>1，f1,f2是构造函数Foo（）的实例，他们两个的<em>proto</em>属性都指向同于个原型对象，也就是构造函数Foo（）的原型对象Foo.prototype<br>f1的原型链：f1–&gt;Foo.prototype–&gt;Object.prototype–&gt;null<br>2,构造函数Foo（）的prototype属性指向自己的原型对象Foo.prototype，而Foo.prototype自己本身的constructor属性指向函数本身，也就是构造函数Foo（）<br>3，构造函数Foo（）本身也有<em>proto</em>属性，<strong>指向创建自己的原型对象</strong>Function.prototype<br>4,O1,O2是两个对象，他们的<em>proto</em>指向创建自己的原型对象，也就是Object.prototype<br>5，原型链的尽头都是null,所有的原型对象都继承字Object.prototype</p>
-<h4 id="一些方法"><a href="#一些方法" class="headerlink" title="一些方法"></a>一些方法</h4><pre><code>delete删除属性  
-比如说我们想删除person1的name属性，
-delete person1.name  
-hasOwnProperty()  用于检测属性是否在实例中，这个方法是object.prototype中的一个方法
- 比如说， alert(person1.age) //23
-Person1.hasOwnProperty(“age”); //false
-这样就可以判断出，person1的age属性是从原型得到的  
-</code></pre>
+        <h3 id="刚结了项目，总结下遇到的一些问题"><a href="#刚结了项目，总结下遇到的一些问题" class="headerlink" title="刚结了项目，总结下遇到的一些问题"></a>刚结了项目，总结下遇到的一些问题</h3><a id="more"></a> 
+<h4 id="1，乱码问题，向后端传输汉字的时候-会出现乱码问题"><a href="#1，乱码问题，向后端传输汉字的时候-会出现乱码问题" class="headerlink" title="1，乱码问题，向后端传输汉字的时候 会出现乱码问题"></a>1，乱码问题，向后端传输汉字的时候 会出现乱码问题</h4><h4 id="解决：-一般乱码问题都是前后端编码不一致的导致的，这次看了下，因为前端是用的get请求，暂时没找到比较好的给get请求编码的方法，所以改成了post请求，发post请求时，可以设置编码格式，前后端统一为utf-8，问题解决。"><a href="#解决：-一般乱码问题都是前后端编码不一致的导致的，这次看了下，因为前端是用的get请求，暂时没找到比较好的给get请求编码的方法，所以改成了post请求，发post请求时，可以设置编码格式，前后端统一为utf-8，问题解决。" class="headerlink" title="解决： 一般乱码问题都是前后端编码不一致的导致的，这次看了下，因为前端是用的get请求，暂时没找到比较好的给get请求编码的方法，所以改成了post请求，发post请求时，可以设置编码格式，前后端统一为utf-8，问题解决。"></a>解决： 一般乱码问题都是前后端编码不一致的导致的，这次看了下，因为前端是用的get请求，暂时没找到比较好的给get请求编码的方法，所以改成了post请求，发post请求时，可以设置编码格式，前后端统一为utf-8，问题解决。</h4><h4 id="2-权限管理问题，由于这个管理系统需要区分-学生，老师，和所长，后端不给力，所以权限管理就分给了前端（这样安全性很差，千万不要用）"><a href="#2-权限管理问题，由于这个管理系统需要区分-学生，老师，和所长，后端不给力，所以权限管理就分给了前端（这样安全性很差，千万不要用）" class="headerlink" title="2,权限管理问题，由于这个管理系统需要区分 学生，老师，和所长，后端不给力，所以权限管理就分给了前端（这样安全性很差，千万不要用）"></a>2,权限管理问题，由于这个管理系统需要区分 学生，老师，和所长，后端不给力，所以权限管理就分给了前端（这样安全性很差，千万不要用）</h4><h4 id="解决：-思路是将登录信息存到sessionStorage里面，他的生命周期在关闭tag标签之后就结束了，所以这次的做法是登录时把用户的状态存到sessionStorage里面，每个页面初始化的时候都取一下这个值，如果没有，就自动跳到登录页面"><a href="#解决：-思路是将登录信息存到sessionStorage里面，他的生命周期在关闭tag标签之后就结束了，所以这次的做法是登录时把用户的状态存到sessionStorage里面，每个页面初始化的时候都取一下这个值，如果没有，就自动跳到登录页面" class="headerlink" title="解决： 思路是将登录信息存到sessionStorage里面，他的生命周期在关闭tag标签之后就结束了，所以这次的做法是登录时把用户的状态存到sessionStorage里面，每个页面初始化的时候都取一下这个值，如果没有，就自动跳到登录页面"></a>解决： 思路是将登录信息存到sessionStorage里面，他的生命周期在关闭tag标签之后就结束了，所以这次的做法是登录时把用户的状态存到sessionStorage里面，每个页面初始化的时候都取一下这个值，如果没有，就自动跳到登录页面</h4><p>但是这个也有问题，就是页面一跳新标签页，sessionStorage就会消失。<br>还有就是伪造的问题</p>
+
       
     </div>
 
@@ -389,18 +378,14 @@ Person1.hasOwnProperty(“age”); //false
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/30/JS继承的实现/" rel="next" title="JS继承的实现">
-                <i class="fa fa-chevron-left"></i> JS继承的实现
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/30/记录下心情/" rel="prev" title="记录下心情">
-                记录下心情 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/09/23/测试/" rel="prev" title="测试">
+                测试 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -521,7 +506,7 @@ Person1.hasOwnProperty(“age”); //false
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#学习js原型链的一些记录和见解"><span class="nav-number">1.</span> <span class="nav-text">学习js原型链的一些记录和见解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是原型链"><span class="nav-number">1.1.</span> <span class="nav-text">什么是原型链</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#需要重点理解的几个属性"><span class="nav-number">1.2.</span> <span class="nav-text">需要重点理解的几个属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一张经典的图"><span class="nav-number">1.3.</span> <span class="nav-text">一张经典的图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一些方法"><span class="nav-number">1.4.</span> <span class="nav-text">一些方法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#刚结了项目，总结下遇到的一些问题"><span class="nav-number">1.</span> <span class="nav-text">刚结了项目，总结下遇到的一些问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1，乱码问题，向后端传输汉字的时候-会出现乱码问题"><span class="nav-number">1.1.</span> <span class="nav-text">1，乱码问题，向后端传输汉字的时候 会出现乱码问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决：-一般乱码问题都是前后端编码不一致的导致的，这次看了下，因为前端是用的get请求，暂时没找到比较好的给get请求编码的方法，所以改成了post请求，发post请求时，可以设置编码格式，前后端统一为utf-8，问题解决。"><span class="nav-number">1.2.</span> <span class="nav-text">解决： 一般乱码问题都是前后端编码不一致的导致的，这次看了下，因为前端是用的get请求，暂时没找到比较好的给get请求编码的方法，所以改成了post请求，发post请求时，可以设置编码格式，前后端统一为utf-8，问题解决。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-权限管理问题，由于这个管理系统需要区分-学生，老师，和所长，后端不给力，所以权限管理就分给了前端（这样安全性很差，千万不要用）"><span class="nav-number">1.3.</span> <span class="nav-text">2,权限管理问题，由于这个管理系统需要区分 学生，老师，和所长，后端不给力，所以权限管理就分给了前端（这样安全性很差，千万不要用）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决：-思路是将登录信息存到sessionStorage里面，他的生命周期在关闭tag标签之后就结束了，所以这次的做法是登录时把用户的状态存到sessionStorage里面，每个页面初始化的时候都取一下这个值，如果没有，就自动跳到登录页面"><span class="nav-number">1.4.</span> <span class="nav-text">解决： 思路是将登录信息存到sessionStorage里面，他的生命周期在关闭tag标签之后就结束了，所以这次的做法是登录时把用户的状态存到sessionStorage里面，每个页面初始化的时候都取一下这个值，如果没有，就自动跳到登录页面</span></a></li></ol></li></ol></div>
             
 
           </div>
